@@ -1,0 +1,21 @@
+.myNav {
+  padding-top: 20px;
+  /* background-color: #ff6d6d; */
+  background-color: #3ad1ff;
+}
+
+.myHeader {
+  margin-bottom: 0 !important;
+}
+
+.myLink {
+  color: black;
+}
+
+.myLink:hover {
+  color: black;
+}
+
+.mySubHeader {
+  margin-top: 0 !important;
+}
