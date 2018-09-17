@@ -1,0 +1,28 @@
+.About__Header {
+  padding: 100px 0 50px;
+  background-color: #ff6d6d;
+  /* background-color: #3ad1ff; */
+}
+
+.Heading {
+  font-size: 3em;
+  text-align: center;
+}
+
+.About__Body {
+  padding: 75px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.Selfie {
+  border: 2px solid black;
+  width: 30%;
+}
+
+.AboutMe__Content {
+  width: 65%;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}

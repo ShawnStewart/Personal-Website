@@ -7,6 +7,7 @@ import "./App.css";
 
 // Components
 import Nav from "./Components/Navbar/Navbar";
+import About from "./Components/About/About";
 
 class App extends Component {
   componentDidMount = () => {
@@ -18,10 +19,15 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Route
-          path="/"
-          render={props => <Nav {...props} onRef={ref => (this.nav = ref)} />}
-        />
+        <div>
+          <Route
+            path="/"
+            render={props => <Nav {...props} onRef={ref => (this.nav = ref)} />}
+          />
+          <Switch>
+            <Route path="/about" component={About} />
+          </Switch>
+        </div>
       </Router>
     );
   }
