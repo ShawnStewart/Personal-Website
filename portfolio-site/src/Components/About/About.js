@@ -3,7 +3,8 @@ import { Container } from "semantic-ui-react";
 import selfie from "../../Img/selfie.jpg";
 import "./About.css";
 
-export default () => {
+export default props => {
+  props.updateMenu("about");
   return (
     <div className="AboutMe">
       <div className="About__Header">

@@ -17,13 +17,13 @@ export default class Navbar extends Component {
 
   handleMenuClick = (e, { name }) => {
     this.setState({ activeMenuItem: name });
+    if (name === "portfolio") name = "/";
 
-    if (name === "portfolio") {
-      this.props.history.push("/");
-    } else {
+    if (name !== this.props.history.location.pathname) {
       this.props.history.push(name);
     }
 
+    if (name === "/") name = "portfolio";
     document.title = `${name.charAt(0).toUpperCase() +
       name.slice(1)} | Shawn Stewart - Full Stack Web Developer`;
   };

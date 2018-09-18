@@ -1,0 +1,18 @@
+.PageNotFound__Header {
+  padding: 100px 0 50px;
+  /* background-color: #ff6d6d; */
+  background-color: #1c8cdb;
+}
+
+.Heading__Main {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.Heading__Secondary {
+  margin: 0;
+}
+
+.PageNotFound__Body {
+  padding: 75px 0;
+}

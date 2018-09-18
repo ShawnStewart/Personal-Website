@@ -13,29 +13,17 @@ export default props => {
             <span className="List__Header">Menu</span>
             <ul className="List__Content">
               <li>
-                <Link
-                  to="/about"
-                  onClick={() => props.setMenu("about")}
-                  className="Footer__Link"
-                >
+                <Link to="/about" className="Footer__Link">
                   <span>About</span>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/"
-                  onClick={() => props.setMenu("portfolio")}
-                  className="Footer__Link"
-                >
+                <Link to="/" className="Footer__Link">
                   <span>Portfolio</span>
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/contact"
-                  onClick={() => props.setMenu("contact")}
-                  className="Footer__Link"
-                >
+                <Link to="/contact" className="Footer__Link">
                   <span>Contact</span>
                 </Link>
               </li>
@@ -93,7 +81,7 @@ export default props => {
             onClick={() => props.setMenu("portfolio")}
             className="Footer__Link"
           >
-            Shawn Stewart Design
+            Shawn Stewart Designs
           </Link>
         </div>
       </Container>
