@@ -8,6 +8,7 @@ import "./App.css";
 // Components
 import Nav from "./Components/Navbar/Navbar";
 import About from "./Components/About/About";
+import Footer from "./Components/Footer/Footer";
 
 class App extends Component {
   componentDidMount = () => {
@@ -19,7 +20,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="App">
           <Route
             path="/"
             render={props => <Nav {...props} onRef={ref => (this.nav = ref)} />}
@@ -27,6 +28,7 @@ class App extends Component {
           <Switch>
             <Route path="/about" component={About} />
           </Switch>
+          <Footer setMenu={path => this.nav.setActiveMenuItem(path)} />
         </div>
       </Router>
     );

@@ -1,12 +1,16 @@
 .About__Header {
   padding: 100px 0 50px;
-  background-color: #ff6d6d;
-  /* background-color: #3ad1ff; */
+  /* background-color: #ff6d6d; */
+  background-color: #1c8cdb;
 }
 
-.Heading {
-  font-size: 3em;
-  text-align: center;
+.Heading__Main {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.Heading__Secondary {
+  margin: 0;
 }
 
 .About__Body {

@@ -1,0 +1,46 @@
+.myFooter {
+  padding: 50px 0;
+  background-color: rgb(26, 26, 26);
+  color: white;
+}
+
+.Footer__Content {
+  display: flex;
+  justify-content: center;
+}
+
+.Footer__List {
+  width: 35%;
+}
+
+.List__Header {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.List__Content {
+  list-style: none;
+  padding: 0;
+}
+
+.Footer__Epilogue {
+  width: 30%;
+}
+
+.Epilogue__Img {
+  float: left;
+  margin: 5px 10px 0 0;
+  width: 85px;
+}
+
+.Copyright {
+  margin-top: 20px;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.Footer__Link {
+  font-weight: bold;
+  color: #1c8cdb;
+}

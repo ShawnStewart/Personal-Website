@@ -1,7 +1,8 @@
 .myNav {
+  margin-bottom: 14px;
   padding-top: 20px;
-  background-color: #ff6d6d;
-  /* background-color: #3ad1ff; */
+  /* background-color: #ff6d6d; */
+  background-color: #1c8cdb;
 }
 
 .myHeader {
