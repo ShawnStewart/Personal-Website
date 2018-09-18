@@ -1,0 +1,72 @@
+.Portfolio__Header {
+  background-image: url("../../Img/florida.jpg");
+  height: 600px;
+  background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: -150px;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.Portfolio__Heading__Main {
+  margin: 0;
+  font-size: 5em;
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000,
+    1px 1px 0 #000000;
+}
+
+.Portfolio__Heading__Secondary {
+  font-size: 2em;
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000,
+    1px 1px 0 #000000;
+}
+
+.Portfolio__Body {
+  margin: 20px 0;
+  height: 1000px;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: 33.33% 33.33% 33.33%;
+}
+
+.Portfolio__Project {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Portfolio__Project:hover {
+  background-color: rgba(175, 175, 175);
+}
+
+.proj1 {
+  background-color: cyan;
+  grid-column: span 2;
+}
+
+.proj2 {
+  background-color: salmon;
+}
+
+.proj3 {
+  background-color: greenyellow;
+}
+
+.proj4 {
+  background-color: orchid;
+  grid-column: span 2;
+}
+
+.proj5 {
+  background-color: thistle;
+  grid-column: span 2;
+}
+
+.proj6 {
+  background-color: whitesmoke;
+}

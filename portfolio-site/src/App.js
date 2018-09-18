@@ -8,6 +8,7 @@ import "./App.css";
 // Components
 import Nav from "./Components/Navbar/Navbar";
 import About from "./Components/About/About";
+import Portfolio from "./Components/Portfolio/Portfolio";
 import Footer from "./Components/Footer/Footer";
 import PageNotFound from "./Components/404/PageNotFound";
 
@@ -32,6 +33,18 @@ class App extends Component {
                 path="/about"
                 render={props => (
                   <About
+                    {...props}
+                    updateMenu={name =>
+                      this.nav ? this.nav.setActiveMenuItem(name) : null
+                    }
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/"
+                render={props => (
+                  <Portfolio
                     {...props}
                     updateMenu={name =>
                       this.nav ? this.nav.setActiveMenuItem(name) : null
