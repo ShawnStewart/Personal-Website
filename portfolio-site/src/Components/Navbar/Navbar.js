@@ -13,6 +13,8 @@ export default class Navbar extends Component {
 
   setActiveMenuItem = name => {
     this.setState({ activeMenuItem: name });
+
+    this.updateTitle(name);
   };
 
   handleMenuClick = (e, { name }) => {
@@ -23,9 +25,14 @@ export default class Navbar extends Component {
       this.props.history.push(name);
     }
 
-    if (name === "/") name = "portfolio";
-    document.title = `${name.charAt(0).toUpperCase() +
-      name.slice(1)} | Shawn Stewart - Full Stack Web Developer`;
+    this.updateTitle(name);
+  };
+
+  updateTitle = path => {
+    if (path === "/") path = "portfolio";
+
+    document.title = `${path.charAt(0).toUpperCase() +
+      path.slice(1)} | Shawn Stewart - Full Stack Web Developer`;
   };
 
   componentDidMount = () => {
@@ -47,7 +54,9 @@ export default class Navbar extends Component {
                 <Header.Content>
                   <Link
                     to="/"
-                    onClick={() => this.setActiveMenuItem("portfolio")}
+                    onClick={() =>
+                      this.handleMenuClick(null, { name: "portfolio" })
+                    }
                     className="myLink"
                   >
                     Shawn Stewart
@@ -58,7 +67,9 @@ export default class Navbar extends Component {
                 <Header.Content>
                   <Link
                     to="/"
-                    onClick={() => this.setActiveMenuItem("portfolio")}
+                    onClick={() =>
+                      this.handleMenuClick(null, { name: "portfolio" })
+                    }
                     className="myLink"
                   >
                     Full Stack Web Developer
