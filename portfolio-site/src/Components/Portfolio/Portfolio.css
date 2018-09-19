@@ -81,28 +81,59 @@
 }
 
 .Project2__Visible {
-  background-image: url("../../Img//climbToTop.png");
+  background-image: url("../../Img/climbToTop.png");
   background-size: cover;
 }
 
 .Project2__Hidden {
-  background-color: olive;
+  background-color: rgb(232, 106, 33);
 }
 
-.proj3 {
-  background-color: indianred;
+.Project3 {
   grid-row: span 2;
 }
 
-.proj4 {
+.Project3__Visible {
+  background-image: url("../../Img/LambdaNotesBlurred.jpg");
+  background-size: stretch;
+  background-position-x: 60%;
+  color: cornflowerblue;
+  font-weight: bold;
+}
+
+.Project3__Hidden {
   background-color: cornflowerblue;
+}
+
+.Project4 {
   grid-column: span 2;
 }
 
-.proj5 {
-  background-color: thistle;
+.Project4__Visible {
+  background-image: url("../../Img/lake.jpg");
+  background-size: cover;
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000,
+    1px 1px 0 #000000;
 }
 
-.proj6 {
+.Project4__Hidden {
   background-color: goldenrod;
+}
+
+.Project5__Visible {
+  background-image: url("../../Img/sunset.jpg");
+  background-size: cover;
+}
+
+.Project5__Hidden {
+  background-color: olive;
+}
+
+.Project6__Visible {
+  background-image: url("../../Img/tower.jpg");
+  background-size: cover;
+}
+
+.Project6__Hidden {
+  background-color: indianred;
 }

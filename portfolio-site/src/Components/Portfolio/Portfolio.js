@@ -26,14 +26,14 @@ export default props => {
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project1__Hidden">
                   <h2>NextSteps</h2>
-                  <Button>Learn More</Button>
+                  <Button disabled>Learn More</Button>
                 </div>
               </Reveal.Content>
             </Reveal>
           </div>
 
           <div className="Portfolio__Project Project2">
-            <Reveal animated="move" className="Project__Reveal">
+            <Reveal animated="fade" className="Project__Reveal">
               <Reveal.Content visible className="Project__Reveal">
                 <div className="visible__content Project2__Visible">
                   Project 2
@@ -41,24 +41,75 @@ export default props => {
               </Reveal.Content>
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project2__Hidden">
-                  <h2>Project 2</h2>
-                  <Button>Learn More</Button>
+                  <h2>Coming Soon...</h2>
+                  {/* <Button disabled>Learn More</Button> */}
                 </div>
               </Reveal.Content>
             </Reveal>
           </div>
 
-          <div className="Portfolio__Project proj3">
-            <div>Project 3</div>
+          <div className="Portfolio__Project Project3">
+            <Reveal animated="fade" className="Project__Reveal">
+              <Reveal.Content visible className="Project__Reveal">
+                <div className="visible__content Project3__Visible">
+                  Lambda Notes
+                </div>
+              </Reveal.Content>
+              <Reveal.Content hidden className="Project__Reveal">
+                <div className="hidden__content Project3__Hidden">
+                  <h2>Lambda Notes</h2>
+                  <Button disabled>Learn More</Button>
+                </div>
+              </Reveal.Content>
+            </Reveal>
           </div>
-          <div className="Portfolio__Project proj4">
-            <div>Project 4</div>
+
+          <div className="Portfolio__Project Project4">
+            <Reveal animated="fade" className="Project__Reveal">
+              <Reveal.Content visible className="Project__Reveal">
+                <div className="visible__content Project4__Visible">
+                  Project 4
+                </div>
+              </Reveal.Content>
+              <Reveal.Content hidden className="Project__Reveal">
+                <div className="hidden__content Project4__Hidden">
+                  <h2>Coming Soon...</h2>
+                  {/* <Button disabled>Learn More</Button> */}
+                </div>
+              </Reveal.Content>
+            </Reveal>
           </div>
-          <div className="Portfolio__Project proj5">
-            <div>Project 5</div>
+
+          <div className="Portfolio__Project Project5">
+            <Reveal animated="fade" className="Project__Reveal">
+              <Reveal.Content visible className="Project__Reveal">
+                <div className="visible__content Project5__Visible">
+                  Project 5
+                </div>
+              </Reveal.Content>
+              <Reveal.Content hidden className="Project__Reveal">
+                <div className="hidden__content Project5__Hidden">
+                  <h2>Coming Soon...</h2>
+                  {/* <Button disabled>Learn More</Button> */}
+                </div>
+              </Reveal.Content>
+            </Reveal>
           </div>
-          <div className="Portfolio__Project proj6">
-            <div>Project 6</div>
+
+          <div className="Portfolio__Project Project6">
+            <Reveal animated="fade" className="Project__Reveal">
+              <Reveal.Content visible className="Project__Reveal">
+                <div className="visible__content Project6__Visible">
+                  Project 6
+                </div>
+              </Reveal.Content>
+              <Reveal.Content hidden className="Project__Reveal">
+                <div className="hidden__content Project6__Hidden">
+                  <h2>Coming Soon...</h2>
+                  {/* <Button disabled>Learn More</Button> */}
+                </div>
+              </Reveal.Content>
+            </Reveal>
           </div>
         </div>
       </Container>
