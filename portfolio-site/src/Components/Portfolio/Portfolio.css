@@ -35,7 +35,8 @@
 }
 
 .Portfolio__Project {
-  margin: 10px;
+  margin: 5px;
+  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,4 +137,8 @@
 
 .Project6__Hidden {
   background-color: indianred;
+}
+
+.noPointerEvents {
+  pointer-events: none;
 }

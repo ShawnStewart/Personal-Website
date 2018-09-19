@@ -18,7 +18,10 @@ export default props => {
         <div className="Portfolio__Body">
           <div className="Portfolio__Project Project1">
             <Reveal animated="fade" className="Project__Reveal">
-              <Reveal.Content visible className="Project__Reveal">
+              <Reveal.Content
+                visible
+                className="Project__Reveal noPointerEvents"
+              >
                 <div className="visible__content Project1__Visible">
                   NextSteps
                 </div>
@@ -26,7 +29,14 @@ export default props => {
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project1__Hidden">
                   <h2>NextSteps</h2>
-                  <Button disabled>Learn More</Button>
+                  <Button.Group color="teal">
+                    <Button onClick={() => console.log("hi")}>
+                      Learn More
+                    </Button>
+                    <Button onClick={() => console.log("hi")}>
+                      View the Project
+                    </Button>
+                  </Button.Group>
                 </div>
               </Reveal.Content>
             </Reveal>
@@ -34,7 +44,10 @@ export default props => {
 
           <div className="Portfolio__Project Project2">
             <Reveal animated="fade" className="Project__Reveal">
-              <Reveal.Content visible className="Project__Reveal">
+              <Reveal.Content
+                visible
+                className="Project__Reveal noPointerEvents"
+              >
                 <div className="visible__content Project2__Visible">
                   Project 2
                 </div>
@@ -50,7 +63,10 @@ export default props => {
 
           <div className="Portfolio__Project Project3">
             <Reveal animated="fade" className="Project__Reveal">
-              <Reveal.Content visible className="Project__Reveal">
+              <Reveal.Content
+                visible
+                className="Project__Reveal noPointerEvents"
+              >
                 <div className="visible__content Project3__Visible">
                   Lambda Notes
                 </div>
@@ -58,7 +74,10 @@ export default props => {
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project3__Hidden">
                   <h2>Lambda Notes</h2>
-                  <Button disabled>Learn More</Button>
+                  <Button.Group>
+                    <Button>Learn More</Button>
+                    <Button>View the Project</Button>
+                  </Button.Group>
                 </div>
               </Reveal.Content>
             </Reveal>
@@ -66,7 +85,10 @@ export default props => {
 
           <div className="Portfolio__Project Project4">
             <Reveal animated="fade" className="Project__Reveal">
-              <Reveal.Content visible className="Project__Reveal">
+              <Reveal.Content
+                visible
+                className="Project__Reveal noPointerEvents"
+              >
                 <div className="visible__content Project4__Visible">
                   Project 4
                 </div>
@@ -82,7 +104,10 @@ export default props => {
 
           <div className="Portfolio__Project Project5">
             <Reveal animated="fade" className="Project__Reveal">
-              <Reveal.Content visible className="Project__Reveal">
+              <Reveal.Content
+                visible
+                className="Project__Reveal noPointerEvents"
+              >
                 <div className="visible__content Project5__Visible">
                   Project 5
                 </div>
@@ -98,7 +123,10 @@ export default props => {
 
           <div className="Portfolio__Project Project6">
             <Reveal animated="fade" className="Project__Reveal">
-              <Reveal.Content visible className="Project__Reveal">
+              <Reveal.Content
+                visible
+                className="Project__Reveal noPointerEvents"
+              >
                 <div className="visible__content Project6__Visible">
                   Project 6
                 </div>
