@@ -8,7 +8,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShawnStewart/Personal-Website.git"
+    "url": "git+https://github.com/ShawnStewart/Personal-Website.git",
+    "heroku-postbuild": "cd portfolio-site && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
