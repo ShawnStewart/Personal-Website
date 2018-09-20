@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "cd portfolio-site && npm install && npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShawnStewart/Personal-Website.git",
-    "heroku-postbuild": "cd portfolio-site && npm install && npm run build"
+    "url": "git+https://github.com/ShawnStewart/Personal-Website.git"
   },
   "keywords": [],
   "author": "",
