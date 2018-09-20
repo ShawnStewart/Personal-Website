@@ -4,18 +4,38 @@
   background-color: #1c8cdb;
 }
 
-.myHeader {
-  margin-bottom: 0 !important;
+.Nav__Container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Nav__Heading__Main {
+  font-size: 2em;
+  text-shadow: -1px -1px 0 rgba(1, 1, 1, 0.2), 1px -1px 0 rgba(1, 1, 1, 0.2),
+    -1px 1px 0 rgba(1, 1, 1, 0.2), 1px 1px 0 rgba(1, 1, 1, 0.2);
+}
+
+.Nav__Heading__Secondary {
+  font-size: 1.2em;
+  text-shadow: -1px -1px 0 rgba(1, 1, 1, 0.2), 1px -1px 0 rgba(1, 1, 1, 0.2),
+    -1px 1px 0 rgba(1, 1, 1, 0.2), 1px 1px 0 rgba(1, 1, 1, 0.2);
+}
+
+.Nav__Menu__Container {
+  width: 450px;
+}
+
+.Nav__Menu {
+  border-top: 0px !important;
+  border-right: 0px !important;
+  border-left: 0px !important;
 }
 
 .myLink {
-  color: black;
+  color: white;
 }
 
 .myLink:hover {
-  color: black;
-}
-
-.mySubHeader {
-  margin-top: 0 !important;
+  color: white;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Container, Grid, Header, Menu } from "semantic-ui-react";
+import { Container, Menu } from "semantic-ui-react";
 import "./Navbar.css";
 export default class Navbar extends Component {
   constructor(props) {
@@ -48,37 +48,37 @@ export default class Navbar extends Component {
     return (
       <div className="myNav">
         <Container>
-          <Grid columns="2">
-            <Grid.Column width="8">
-              <Header as="h1" textAlign="left" className="myHeader">
-                <Header.Content>
-                  <Link
-                    to="/"
-                    onClick={() =>
-                      this.handleMenuClick(null, { name: "portfolio" })
-                    }
-                    className="myLink"
-                  >
-                    Shawn Stewart
-                  </Link>
-                </Header.Content>
-              </Header>
-              <Header sub as="h2" textAlign="left" className="mySubHeader">
-                <Header.Content>
-                  <Link
-                    to="/"
-                    onClick={() =>
-                      this.handleMenuClick(null, { name: "portfolio" })
-                    }
-                    className="myLink"
-                  >
-                    Full Stack Web Developer
-                  </Link>
-                </Header.Content>
-              </Header>
-            </Grid.Column>
-            <Grid.Column width="8">
-              <Menu pointing secondary className="myMenu">
+          <div className="Nav__Container">
+            <div className="Nav__Header">
+              <Link
+                to="/"
+                onClick={() =>
+                  this.handleMenuClick(null, { name: "portfolio" })
+                }
+                className="myLink"
+              >
+                <h1 className="Nav__Heading__Main">Shawn Stewart</h1>
+              </Link>
+              <Link
+                to="/"
+                onClick={() =>
+                  this.handleMenuClick(null, { name: "portfolio" })
+                }
+                className="myLink"
+              >
+                <h1 className="Nav__Heading__Secondary">
+                  Full Stack Web Developer
+                </h1>
+              </Link>
+            </div>
+            <div className="Nav__Menu__Container">
+              <Menu
+                pointing
+                secondary
+                widths="3"
+                className="Nav__Menu"
+                inverted
+              >
                 <Menu.Item
                   name="about"
                   active={activeMenuItem === "about"}
@@ -94,16 +94,9 @@ export default class Navbar extends Component {
                   active={activeMenuItem === "contact"}
                   onClick={this.handleMenuClick}
                 />
-                <Menu.Menu position="right">
-                  <Menu.Item
-                    name="hire"
-                    active={activeMenuItem === "hire"}
-                    onClick={this.handleMenuClick}
-                  />
-                </Menu.Menu>
               </Menu>
-            </Grid.Column>
-          </Grid>
+            </div>
+          </div>
         </Container>
       </div>
     );
