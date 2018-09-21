@@ -14,7 +14,7 @@ export default class Navbar extends Component {
   setActiveMenuItem = name => {
     this.setState({ activeMenuItem: name });
 
-    this.updateTitle(name);
+    // this.updateTitle(name);
   };
 
   handleMenuClick = (e, { name }) => {
@@ -25,7 +25,7 @@ export default class Navbar extends Component {
       this.props.history.push(name);
     }
 
-    this.updateTitle(name);
+    // this.updateTitle(name);
   };
 
   updateTitle = path => {
