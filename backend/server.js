@@ -4,7 +4,7 @@ const path = require("path");
 const port = process.env.PORT || 4000;
 
 // Serve static files from React App
-app.use(express.static(path.join(__dirname, "portfolio-site/build")));
+app.use(express.static("portfolio-site/build"));
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -15,7 +15,7 @@ app.get("test", (req, res) => {
 });
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "portfolio-site/build/index.html"));
+  res.sendFile("portfolio-site/build/index.html");
 });
 
 app.listen(port, () => console.log(`\nServer is runningon port ${port}`));
