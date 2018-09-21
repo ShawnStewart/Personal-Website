@@ -10,4 +10,8 @@ app.use(express.static(path.join(__dirname, "../leaderboard-frontend/build")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/portfolio-site/build/index.html"));
+});
+
 app.listen(port, () => console.log(`\nServer is runningon port ${port}`));
