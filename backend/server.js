@@ -14,8 +14,4 @@ app.get("test", (req, res) => {
   res.json({ message: "test successful!" });
 });
 
-app.get("*", (req, res) => {
-  res.sendFile("portfolio-site/build/index.html");
-});
-
 app.listen(port, () => console.log(`\nServer is runningon port ${port}`));
