@@ -16,7 +16,7 @@ export default props => {
       <Container>
         <div className="About__Body">
           <img src={selfie} alt="Selfie" className="Selfie" />
-          <div className="AboutMe__Content">
+          <p className="AboutMe__Content">
             I am a full stack web developer. I am a full stack web developer. I
             am a full stack web developer. I am a full stack web developer. I am
             a full stack web developer. I am a full stack web developer. I am a
@@ -24,7 +24,7 @@ export default props => {
             full stack web developer. I am a full stack web developer. I am a
             full stack web developer. I am a full stack web developer. I am a
             full stack web developer. I am a full stack web developer.
-          </div>
+          </p>
         </div>
       </Container>
     </div>
