@@ -1,5 +1,5 @@
 .myFooter {
-  padding: 50px 0;
+  padding: 50px 0 25px;
   background-color: rgb(26, 26, 26);
   color: white;
 }
@@ -35,7 +35,7 @@
 }
 
 .Copyright {
-  margin-top: 20px;
+  margin-top: 50px;
   font-size: 0.9em;
   text-align: center;
 }

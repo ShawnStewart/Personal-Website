@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container } from "semantic-ui-react";
+import { Container, Icon } from "semantic-ui-react";
 import selfie from "../../Img/selfie.jpg";
 import "./Footer.css";
 
@@ -39,7 +39,10 @@ export default props => {
                   rel="noopener noreferrer"
                   className="Footer__Link"
                 >
-                  <span>Github</span>
+                  <span>
+                    <Icon name="github" />
+                    Github
+                  </span>
                 </a>
               </li>
               <li>
@@ -49,7 +52,10 @@ export default props => {
                   rel="noopener noreferrer"
                   className="Footer__Link"
                 >
-                  <span>LinkedIn</span>
+                  <span>
+                    <Icon name="linkedin" />
+                    LinkedIn
+                  </span>
                 </a>
               </li>
               <li>
@@ -59,7 +65,10 @@ export default props => {
                   rel="noopener noreferrer"
                   className="Footer__Link"
                 >
-                  <span>Twitter</span>
+                  <span>
+                    <Icon name="twitter" />
+                    Twitter
+                  </span>
                 </a>
               </li>
             </ul>
@@ -68,20 +77,20 @@ export default props => {
             <img src={selfie} alt="Selfie" className="Epilogue__Img" />
             <p>
               A full stack web developer who is proficient in HTML5, CSS3, and
-              Javascript ES2018. Shawn's passion to learn and hunger enable him
-              to create powerful high-quality web applications using the latest
-              technologies.
+              Javascript ES2018. Shawn's passion to learn and hunger for success
+              enables him to create powerful high-quality web applications using
+              the latest technologies.
             </p>
           </div>
         </div>
         <div className="Copyright">
-          Copyright &copy; 2018{" "}
+          {/* Copyright &copy; 2018{" "} */}
           <Link
             to="/"
             onClick={() => props.setMenu("portfolio")}
             className="Footer__Link"
           >
-            Shawn Stewart Designs
+            Shawn Stewart Designs 2018
           </Link>
         </div>
       </Container>
