@@ -24,10 +24,9 @@ export default props => {
               <a href="https://lambdaschool.com/" target="_blank">
                 Lambda School
               </a>{" "}
-              as of September 2018. I much enjoy collaborating with talented
-              people to create highly impactful applications. I strive to
-              continuously expand my knowledge to increase my overall value as a
-              developer.
+              as of September 2018. I admire collaborating with talented people
+              to create highly impactful applications. I strive to continuously
+              expand my knowledge to increase my overall value as a developer.
             </p>
           </div>
         </div>
