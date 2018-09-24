@@ -29,14 +29,18 @@ export default props => {
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project1__Hidden">
                   <h2>NextSteps</h2>
-                  <Button.Group color="teal">
-                    <Button onClick={() => console.log("hi")}>
+                  <div className="Project__BtnGroup">
+                    <Button color="teal" disabled>
                       Learn More
                     </Button>
-                    <Button onClick={() => console.log("hi")}>
-                      View the Project
-                    </Button>
-                  </Button.Group>
+                    <a
+                      href="https://labs-next-leaderboard.herokuapp.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button color="teal">View the Project</Button>
+                    </a>
+                  </div>
                 </div>
               </Reveal.Content>
             </Reveal>
@@ -74,10 +78,16 @@ export default props => {
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project3__Hidden">
                   <h2>Lambda Notes</h2>
-                  <Button.Group>
-                    <Button>Learn More</Button>
-                    <Button>View the Project</Button>
-                  </Button.Group>
+                  <div className="Project__BtnGroup">
+                    <Button disabled>Learn More</Button>
+                    <a
+                      href="https://super-duper-dope-notepad.netlify.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button>View the Project</Button>
+                    </a>
+                  </div>
                 </div>
               </Reveal.Content>
             </Reveal>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Icon } from "semantic-ui-react";
-import selfie from "../../Img/selfie2.jpg";
+import selfie from "../../Img/selfie.jpg";
 import "./Footer.css";
 
 export default props => {

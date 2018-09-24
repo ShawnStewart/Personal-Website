@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "semantic-ui-react";
-import selfie from "../../Img/selfie2.jpg";
+import selfie from "../../Img/selfie.jpg";
 import "./About.css";
 
 export default props => {
@@ -21,7 +21,11 @@ export default props => {
             <img src={selfie} alt="Selfie" className="Selfie" />
             <p className="AboutMe__Content">
               I am a full stack web developer and graduate of{" "}
-              <a href="https://lambdaschool.com/" target="_blank">
+              <a
+                href="https://lambdaschool.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Lambda School
               </a>{" "}
               as of September 2018. I admire collaborating with talented people
