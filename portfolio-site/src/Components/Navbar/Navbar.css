@@ -39,3 +39,20 @@
 .myLink:hover {
   color: white;
 }
+
+@media (max-width: 768px) {
+  .Nav__Menu__Container {
+    width: 300px;
+  }
+}
+
+@media (max-width: 550px) {
+  .Nav__Container {
+    flex-direction: column;
+  }
+
+  .Nav__Menu__Container {
+    margin-top: 20px;
+    width: 450px;
+  }
+}
