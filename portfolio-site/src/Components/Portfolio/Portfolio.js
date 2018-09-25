@@ -53,7 +53,7 @@ export default props => {
                 className="Project__Reveal noPointerEvents"
               >
                 <div className="visible__content Project2__Visible">
-                  Project 2
+                  Coming Soon...
                 </div>
               </Reveal.Content>
               <Reveal.Content hidden className="Project__Reveal">
@@ -100,7 +100,7 @@ export default props => {
                 className="Project__Reveal noPointerEvents"
               >
                 <div className="visible__content Project4__Visible">
-                  Project 4
+                  Coming Soon...
                 </div>
               </Reveal.Content>
               <Reveal.Content hidden className="Project__Reveal">
@@ -119,7 +119,7 @@ export default props => {
                 className="Project__Reveal noPointerEvents"
               >
                 <div className="visible__content Project5__Visible">
-                  Project 5
+                  Coming Soon...
                 </div>
               </Reveal.Content>
               <Reveal.Content hidden className="Project__Reveal">
@@ -138,7 +138,7 @@ export default props => {
                 className="Project__Reveal noPointerEvents"
               >
                 <div className="visible__content Project6__Visible">
-                  Project 6
+                  Coming Soon...
                 </div>
               </Reveal.Content>
               <Reveal.Content hidden className="Project__Reveal">

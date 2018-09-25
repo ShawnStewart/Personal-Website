@@ -36,7 +36,7 @@
 
 .Portfolio__Project {
   margin: 5px;
-  border: 1px solid black;
+  border: 1px solid rgba(1, 1, 1, 0.7);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,4 +141,45 @@
 
 .noPointerEvents {
   pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .Portfolio__Body {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 25% 25%;
+  }
+
+  .Project3 .Project__BtnGroup {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Project4 {
+    grid-column: span 1;
+  }
+
+  .Project5 {
+    grid-column: span 2;
+  }
+
+  .Project6 {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .Portfolio__Body {
+    grid-template-columns: 100%;
+    grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+    height: 1800px;
+  }
+
+  .Portfolio__Project {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .Project6 {
+    display: initial;
+  }
 }
