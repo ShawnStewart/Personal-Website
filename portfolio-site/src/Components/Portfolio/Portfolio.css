@@ -168,10 +168,19 @@
 }
 
 @media (max-width: 450px) {
+  .Portfolio__Header {
+    background-attachment: scroll;
+    background-position: center;
+  }
+
   .Portfolio__Body {
     grid-template-columns: 100%;
     grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
     height: 1800px;
+  }
+
+  .Project3 .Project__BtnGroup {
+    flex-direction: row;
   }
 
   .Portfolio__Project {
