@@ -55,7 +55,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2em;
+  font-weight: bold;
+  font-size: 2.5em;
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000,
+    1px 1px 0 #000000;
 }
 
 .hidden__content {
@@ -65,7 +68,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 3em;
+  font-size: 1em;
 }
 
 .Project1 {
@@ -82,8 +85,9 @@
 }
 
 .Project2__Visible {
-  background-image: url("../../Img/tower.jpg");
+  background-image: url("../../Img/Checkers.jpg");
   background-size: cover;
+  color: greenyellow;
 }
 
 .Project2__Hidden {
@@ -99,7 +103,6 @@
   background-size: stretch;
   background-position-x: 60%;
   color: cornflowerblue;
-  font-weight: bold;
 }
 
 .Project3__Hidden {
@@ -113,8 +116,6 @@
 .Project4__Visible {
   background-image: url("../../Img/lake.jpg");
   background-size: cover;
-  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000,
-    1px 1px 0 #000000;
 }
 
 .Project4__Hidden {
@@ -131,7 +132,7 @@
 }
 
 .Project6__Visible {
-  background-image: url("../../Img/climbToTop.png");
+  background-image: url("../../Img/tower.jpg");
   background-size: cover;
 }
 
@@ -167,7 +168,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   .Portfolio__Header {
     background-attachment: scroll;
     background-position: center;

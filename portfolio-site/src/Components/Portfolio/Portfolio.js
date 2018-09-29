@@ -31,14 +31,14 @@ export default props => {
                   <h2>NextSteps</h2>
                   <div className="Project__BtnGroup">
                     <Button color="teal" disabled>
-                      Learn More
+                      Learn more
                     </Button>
                     <a
                       href="https://labs-next-leaderboard.herokuapp.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button color="teal">View the Project</Button>
+                      <Button color="teal">View the project</Button>
                     </a>
                   </div>
                 </div>
@@ -53,13 +53,22 @@ export default props => {
                 className="Project__Reveal noPointerEvents"
               >
                 <div className="visible__content Project2__Visible">
-                  Coming Soon...
+                  Checkers
                 </div>
               </Reveal.Content>
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project2__Hidden">
-                  <h2>Coming Soon...</h2>
-                  {/* <Button disabled>Learn More</Button> */}
+                  <h2>Checkers</h2>
+                  <div className="Project__BtnGroup">
+                    <Button disabled>Learn more</Button>
+                    <a
+                      href="https://codepen.io/ShawnStewart/pen/dKxxWN?editors=0110"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button>View the project</Button>
+                    </a>
+                  </div>
                 </div>
               </Reveal.Content>
             </Reveal>
@@ -79,13 +88,13 @@ export default props => {
                 <div className="hidden__content Project3__Hidden">
                   <h2>Lambda Notes</h2>
                   <div className="Project__BtnGroup">
-                    <Button disabled>Learn More</Button>
+                    <Button disabled>Learn more</Button>
                     <a
                       href="https://super-duper-dope-notepad.netlify.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Button>View the Project</Button>
+                      <Button>View the project</Button>
                     </a>
                   </div>
                 </div>
@@ -106,7 +115,7 @@ export default props => {
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project4__Hidden">
                   <h2>Coming Soon...</h2>
-                  {/* <Button disabled>Learn More</Button> */}
+                  {/* <Button disabled>Learn more</Button> */}
                 </div>
               </Reveal.Content>
             </Reveal>
@@ -125,7 +134,7 @@ export default props => {
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project5__Hidden">
                   <h2>Coming Soon...</h2>
-                  {/* <Button disabled>Learn More</Button> */}
+                  {/* <Button disabled>Learn more</Button> */}
                 </div>
               </Reveal.Content>
             </Reveal>
@@ -144,7 +153,7 @@ export default props => {
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project6__Hidden">
                   <h2>Coming Soon...</h2>
-                  {/* <Button disabled>Learn More</Button> */}
+                  {/* <Button disabled>Learn more</Button> */}
                 </div>
               </Reveal.Content>
             </Reveal>
