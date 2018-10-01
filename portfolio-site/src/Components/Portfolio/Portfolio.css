@@ -90,13 +90,15 @@
 }
 
 .Project2__Visible {
-  background-image: url("../../Img/Checkers.jpg");
-  background-size: cover;
-  color: greenyellow;
+  background-color: olive;
+  background-image: url("../../Img/NumberedTilesBlurred.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  color: cyan;
 }
 
 .Project2__Hidden {
-  background-color: rgb(232, 106, 33);
+  background-color: olive;
 }
 
 .Project3 {
@@ -128,12 +130,13 @@
 }
 
 .Project5__Visible {
-  background-image: url("../../Img/sunset.jpg");
+  background-image: url("../../Img/Checkers.jpg");
   background-size: cover;
+  color: greenyellow;
 }
 
 .Project5__Hidden {
-  background-color: olive;
+  background-color: rgb(232, 106, 33);
 }
 
 .Project6__Visible {

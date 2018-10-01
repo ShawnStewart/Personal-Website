@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Container, Button } from "semantic-ui-react";
-import picture from "../../Img/RunningMan.jpeg";
+import picture from "../../Img/NumberedTiles.jpg";
 import "./SlidingPuzzle.css";
 
 export default class SlidingPuzzle extends Component {

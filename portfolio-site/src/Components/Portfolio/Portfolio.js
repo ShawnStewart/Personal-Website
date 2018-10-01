@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Reveal, Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import "./Portfolio.css";
 
 export default props => {
@@ -53,21 +54,17 @@ export default props => {
                 className="Project__Reveal noPointerEvents"
               >
                 <div className="visible__content Project2__Visible">
-                  Checkers
+                  Sliding Puzzle
                 </div>
               </Reveal.Content>
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project2__Hidden">
-                  <h2>Checkers</h2>
+                  <h2>Sliding Puzzle</h2>
                   <div className="Project__BtnGroup">
                     <Button disabled>Learn more</Button>
-                    <a
-                      href="https://codepen.io/ShawnStewart/pen/dKxxWN?editors=0110"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <Link to="/projects/sliding_puzzle">
                       <Button>View the project</Button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </Reveal.Content>
@@ -128,13 +125,22 @@ export default props => {
                 className="Project__Reveal noPointerEvents"
               >
                 <div className="visible__content Project5__Visible">
-                  Coming Soon...
+                  Checkers
                 </div>
               </Reveal.Content>
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project5__Hidden">
-                  <h2>Coming Soon...</h2>
-                  {/* <Button disabled>Learn more</Button> */}
+                  <h2>Checkers</h2>
+                  <div className="Project__BtnGroup">
+                    <Button disabled>Learn more</Button>
+                    <a
+                      href="https://codepen.io/ShawnStewart/pen/dKxxWN?editors=0110"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button>View the project</Button>
+                    </a>
+                  </div>
                 </div>
               </Reveal.Content>
             </Reveal>
