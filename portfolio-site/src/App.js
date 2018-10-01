@@ -16,10 +16,10 @@ import SlidingPuzzle from "./Components/Projects/SlidingPuzzle";
 class App extends Component {
   componentDidMount = () => {
     let path = window.location.href;
-    path = path.split(process.env.REACT_APP_URL)[1];
+    path = path.split(window.location.origin)[1];
     if (path === "") path = "portfolio";
     console.log(path, window.location, process.env.REACT_APP_URL);
-    this.nav.setActiveMenuItem(path);
+    this.nav.setActiveMenuItem("Portfolio");
   };
 
   render() {
