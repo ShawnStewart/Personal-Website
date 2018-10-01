@@ -19,10 +19,10 @@ export default class Navbar extends Component {
 
   handleMenuClick = (e, { name }) => {
     this.setState({ activeMenuItem: name });
-    if (name === "portfolio") name = "/";
+    if (name === "portfolio") name = "";
 
-    if (name !== this.props.history.location.pathname) {
-      this.props.history.push(name);
+    if (`/${name}` !== this.props.history.location.pathname) {
+      this.props.history.push(`/${name}`);
     }
 
     // this.updateTitle(name);

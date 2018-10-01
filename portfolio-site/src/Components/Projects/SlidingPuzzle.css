@@ -1,0 +1,18 @@
+#puzzle {
+  padding: 1px;
+  margin: 50px auto;
+  background-color: black;
+  width: 600px;
+  height: 600px;
+  display: grid;
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+#empty {
+  background-color: black;
+}
+
+.tile {
+  margin: 2px;
+}

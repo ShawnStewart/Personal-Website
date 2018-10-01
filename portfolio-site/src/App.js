@@ -11,6 +11,7 @@ import About from "./Components/About/About";
 import Portfolio from "./Components/Portfolio/Portfolio";
 import Footer from "./Components/Footer/Footer";
 import PageNotFound from "./Components/404/PageNotFound";
+import SlidingPuzzle from "./Components/Projects/SlidingPuzzle";
 
 class App extends Component {
   componentDidMount = () => {
@@ -51,6 +52,10 @@ class App extends Component {
                     }
                   />
                 )}
+              />
+              <Route
+                path="/projects/sliding_puzzle"
+                component={SlidingPuzzle}
               />
               <Route
                 render={props => (
