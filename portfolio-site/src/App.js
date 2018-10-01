@@ -17,7 +17,8 @@ class App extends Component {
   componentDidMount = () => {
     let path = window.location.href.split(process.env.REACT_APP_URL)[1];
     if (path === "") path = "portfolio";
-    this.nav.handleMenuClick(null, { name: path });
+    console.log(path, window.location, process.env.REACT_APP_URL);
+    // this.nav.handleMenuClick(null, { name: path });
   };
 
   render() {
