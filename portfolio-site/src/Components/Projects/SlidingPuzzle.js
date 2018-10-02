@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Container, Button } from "semantic-ui-react";
-import picture from "../../Img/NumberedTiles.jpg";
+import { Container, Button, Dropdown } from "semantic-ui-react";
+import Numbered from "../../Img/NumberedTiles.jpg";
+import Running from "../../Img/RunningMan.jpeg";
 import "./SlidingPuzzle.css";
 
 export default class SlidingPuzzle extends Component {
@@ -8,14 +9,26 @@ export default class SlidingPuzzle extends Component {
     super(props);
 
     this.state = {
+      picture: 0,
       completed: null,
+      showReset: false,
       moves: 0
     };
   }
 
+  changeImage = (e, { value }) => {
+    console.log("changing", value);
+    this.setState({ picture: value });
+  };
+
   splitImage = () => {
+    this.setState({ completed: null });
+    console.log(this.state);
     let canvas = document.createElement("canvas");
     let puzzle = document.getElementById("puzzle");
+    while (puzzle.firstChild) {
+      puzzle.removeChild(puzzle.firstChild);
+    }
     let ctx = canvas.getContext("2d");
     let parts = [];
     let img = new Image(1000, 1000);
@@ -48,18 +61,29 @@ export default class SlidingPuzzle extends Component {
       puzzle.appendChild(empty);
     };
 
-    img.src = picture;
+    if (this.state.picture === 0) {
+      console.log("0");
+      img.src = Numbered;
+    } else if (this.state.picture === 1) {
+      console.log("1");
+      img.src = Running;
+    }
   };
 
   randomizePuzzle = () => {
     this.setState({ completed: false, moves: 0 });
+    setTimeout(() => {
+      this.setState({ showReset: true });
+    }, 6500);
     const puzzle = document.getElementById("puzzle");
     let childNodes = [].slice.call(puzzle.childNodes);
     childNodes.forEach(elem =>
       elem.addEventListener("click", this.handleTileClick)
     );
     let lastMove;
+
     const randomizeDelay = i => {
+      console.log(i);
       (i => {
         setTimeout(() => {
           childNodes = [].slice.call(puzzle.childNodes);
@@ -94,12 +118,17 @@ export default class SlidingPuzzle extends Component {
           let swappingTile = childNodes[emptyIndex + distance];
           childNodes = this.swapTiles(puzzle, empty, swappingTile);
           lastMove = distance * -1;
-        }, 30 * i);
+        }, 25 * i);
       })(i);
     };
     for (let i = 0; i < 250; i++) {
       randomizeDelay(i);
     }
+  };
+
+  handleReset = () => {
+    this.setState({ showReset: false });
+    this.splitImage();
   };
 
   handleTileClick = e => {
@@ -132,6 +161,14 @@ export default class SlidingPuzzle extends Component {
   };
 
   swapTiles = (parent, element1, element2) => {
+    if (
+      !parent ||
+      !element1 ||
+      !element2 ||
+      element1.parentNode !== parent ||
+      element2.parentNode !== parent
+    )
+      return null;
     let clone1 = element1.cloneNode(true);
     let clone2 = element2.cloneNode(true);
     clone1.addEventListener("click", this.handleTileClick);
@@ -154,7 +191,20 @@ export default class SlidingPuzzle extends Component {
     this.splitImage();
   };
 
+  componentDidUpdate = (prevProps, prevState) => {
+    // picture selection was updated
+    if (this.state.picture !== prevState.picture) {
+      console.log("updated");
+      this.splitImage();
+    }
+  };
+
   render() {
+    console.log(this.state);
+    const pictureOptions = [
+      { value: 0, text: "Numbered" },
+      { value: 1, text: "Running Man" }
+    ];
     return (
       <div className="SlidingPuzzle">
         <div className="SlidingPuzzle__Header">
@@ -163,11 +213,24 @@ export default class SlidingPuzzle extends Component {
           </Container>
         </div>
         <Container>
+          Picture:{" "}
+          <Dropdown
+            defaultValue={0}
+            options={pictureOptions}
+            onChange={this.changeImage}
+            disabled={this.state.completed === false}
+          />
           <Button
             onClick={this.randomizePuzzle}
             disabled={this.state.completed === false}
           >
             Scramble
+          </Button>
+          <Button
+            onClick={this.handleReset}
+            disabled={!this.state.showReset || this.state.completed}
+          >
+            Reset
           </Button>
           <div>Moves: {this.state.moves}</div>
           {this.state.completed ? <div>You've won!</div> : null}
