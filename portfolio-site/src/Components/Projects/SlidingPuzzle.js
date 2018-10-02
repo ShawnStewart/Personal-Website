@@ -17,13 +17,16 @@ export default class SlidingPuzzle extends Component {
   }
 
   changeImage = (e, { value }) => {
-    console.log("changing", value);
-    this.setState({ picture: value });
+    this.setState({
+      picture: value,
+      completed: null,
+      showReset: false,
+      moves: 0
+    });
   };
 
   splitImage = () => {
     this.setState({ completed: null });
-    console.log(this.state);
     let canvas = document.createElement("canvas");
     let puzzle = document.getElementById("puzzle");
     while (puzzle.firstChild) {
@@ -62,10 +65,8 @@ export default class SlidingPuzzle extends Component {
     };
 
     if (this.state.picture === 0) {
-      console.log("0");
       img.src = Numbered;
     } else if (this.state.picture === 1) {
-      console.log("1");
       img.src = Running;
     }
   };
@@ -83,7 +84,6 @@ export default class SlidingPuzzle extends Component {
     let lastMove;
 
     const randomizeDelay = i => {
-      console.log(i);
       (i => {
         setTimeout(() => {
           childNodes = [].slice.call(puzzle.childNodes);
@@ -184,7 +184,7 @@ export default class SlidingPuzzle extends Component {
         return;
       }
     }
-    this.setState({ completed: true });
+    this.setState({ completed: true, showReset: false });
   };
 
   componentDidMount = () => {
@@ -194,13 +194,11 @@ export default class SlidingPuzzle extends Component {
   componentDidUpdate = (prevProps, prevState) => {
     // picture selection was updated
     if (this.state.picture !== prevState.picture) {
-      console.log("updated");
       this.splitImage();
     }
   };
 
   render() {
-    console.log(this.state);
     const pictureOptions = [
       { value: 0, text: "Numbered" },
       { value: 1, text: "Running Man" }
