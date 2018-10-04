@@ -131,6 +131,150 @@ export default class SlidingPuzzle extends Component {
     this.splitImage();
   };
 
+  findFewestMoves = () => {
+    let currentPuzzle = [].slice
+      .call(document.getElementById("puzzle").childNodes)
+      .map(node => node.id);
+    let emptyIndex = currentPuzzle.indexOf("empty");
+    let moveCount = 0;
+    let currentPath = [];
+    let result = 100;
+    let resultPath = [];
+
+    const findSolution = thisMove => {
+      console.log(result, resultPath);
+      // currentPuzzle.forEach((t, i) => console.log(`${i}: ${t}`));
+      // Check if this move is a valid one
+      if (thisMove) {
+        if (emptyIndex + thisMove < 0 || emptyIndex + thisMove > 15) {
+          console.log("Out of bounds.");
+          return;
+        }
+
+        if (emptyIndex % 4 === 0 && thisMove === -1) {
+          console.log("Invalid move!");
+          return;
+        }
+
+        if (
+          (emptyIndex === 3 || emptyIndex === 7 || emptyIndex === 11) &&
+          thisMove === 1
+        ) {
+          console.log("Can't go that way either!");
+          return;
+        }
+
+        if (currentPath[currentPath.length - 1] * -1 === thisMove) {
+          console.log("Silly computer, that would be redundant...");
+          return;
+        }
+      }
+
+      // Do this move
+      if (thisMove !== 0) {
+        console.log(
+          "Swapping indicies",
+          currentPuzzle[emptyIndex],
+          currentPuzzle[emptyIndex + thisMove]
+        );
+        swapTiles(emptyIndex, emptyIndex + thisMove);
+        moveCount++;
+        currentPath.push(thisMove);
+      }
+
+      // Check if the puzzle is now solved
+      if (checkIfSolved(currentPuzzle)) {
+        if (result) {
+          console.log("New solution found!");
+          if (moveCount < result) {
+            result = moveCount;
+            resultPath = currentPath.map(x => x);
+            console.log(
+              "... and it was better than the last!",
+              result,
+              resultPath
+            );
+          }
+        } else {
+          result = moveCount;
+          resultPath = currentPath.map(x => x);
+          console.log(
+            "%cFirst solution found!",
+            "color: orange; font-size: 18px; font-weight: bold;",
+            result,
+            resultPath
+          );
+        }
+      }
+
+      // Recurse over all possible moves
+      if (moveCount < result) {
+        console.log(
+          "%cTrying up",
+          "color: indianred; font-size: 20px; font-weight: bold;"
+        );
+        findSolution(-4);
+        console.log(
+          "%cTrying right",
+          "color: indianred; font-size: 20px; font-weight: bold;"
+        );
+        findSolution(1);
+        console.log(
+          "%cTrying down",
+          "color: indianred; font-size: 20px; font-weight: bold;"
+        );
+        findSolution(4);
+        console.log(
+          "%cTrying left",
+          "color: indianred; font-size: 20px; font-weight: bold;"
+        );
+        findSolution(-1);
+      }
+
+      // Going back a move
+      console.log(
+        "%cGoing back a move",
+        "color: dodgerblue; font-size: 18px; font-weight: bold;"
+      );
+      swapTiles(emptyIndex, emptyIndex + currentPath.pop() * -1);
+      moveCount--;
+    };
+
+    // Tile swapping helper function
+    const swapTiles = (index1, index2) => {
+      // Update empty index, move count, and current path
+      console.log(emptyIndex, index1, index2);
+      emptyIndex = emptyIndex === index1 ? index2 : index1;
+
+      // Swap tiles
+      [currentPuzzle[index1], currentPuzzle[index2]] = [
+        currentPuzzle[index2],
+        currentPuzzle[index1]
+      ];
+    };
+
+    // Solve check helper function
+    const checkIfSolved = arr => {
+      for (let i = 0; i < 15; i++) {
+        if (arr[i] !== `tile${i}`) return false;
+      }
+      return true;
+    };
+
+    findSolution(0);
+    console.log(result, resultPath);
+  };
+
+  cheatTest = () => {
+    const p = document.getElementById("puzzle");
+    this.swapTiles(p, p.childNodes[15], p.childNodes[11]);
+    this.swapTiles(p, p.childNodes[10], p.childNodes[11]);
+    this.swapTiles(p, p.childNodes[10], p.childNodes[14]);
+    this.swapTiles(p, p.childNodes[15], p.childNodes[14]);
+    this.swapTiles(p, p.childNodes[15], p.childNodes[11]);
+    this.swapTiles(p, p.childNodes[10], p.childNodes[11]);
+  };
+
   handleTileClick = e => {
     if (this.state.completed) return;
     const puzzle = document.getElementById("puzzle");
@@ -230,6 +374,8 @@ export default class SlidingPuzzle extends Component {
           >
             Reset
           </Button>
+          {/* <Button onClick={this.findFewestMoves}>Cheat</Button>
+          <Button onClick={this.cheatTest}>Test</Button> */}
           <div>Moves: {this.state.moves}</div>
           {this.state.completed ? <div>You've won!</div> : null}
           <div className="SlidingPuzzle__Body">
