@@ -331,6 +331,10 @@ export default class SlidingPuzzle extends Component {
     this.setState({ completed: true, showReset: false });
   };
 
+  componentWillMount = () => {
+    this.props.updateMenu("portfolio");
+  };
+
   componentDidMount = () => {
     this.splitImage();
   };

@@ -18,7 +18,7 @@ class App extends Component {
   componentDidMount = () => {
     let path = window.location.href;
     path = path.split(window.location.origin)[1].slice(1);
-    if (path === "") path = "portfolio";
+    if (path === "" || path.split("/")[0] === "projects") path = "portfolio";
     this.nav.setActiveMenuItem(path);
   };
 
@@ -69,7 +69,14 @@ class App extends Component {
               />
               <Route
                 path="/projects/sliding_puzzle"
-                component={SlidingPuzzle}
+                render={props => (
+                  <SlidingPuzzle
+                    {...props}
+                    updateMenu={name =>
+                      this.nav ? this.nav.setActiveMenuItem(name) : null
+                    }
+                  />
+                )}
               />
               <Route
                 render={props => (
