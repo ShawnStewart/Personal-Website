@@ -6,11 +6,16 @@
 
 .Footer__Content {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.Footer__Lists {
+  display: flex;
+  width: 60%;
 }
 
 .Footer__List {
-  width: 35%;
+  width: 33%;
 }
 
 .List__Header {
@@ -43,4 +48,24 @@
 .Footer__Link {
   font-weight: bold;
   color: #1c8cdb;
+}
+
+@media (max-width: 550px) {
+  .Footer__Content {
+    justify-content: center;
+  }
+
+  .Footer__Lists {
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+  }
+
+  .Footer__List {
+    width: 100%;
+  }
+
+  .Footer__Epilogue {
+    width: 45%;
+  }
 }
