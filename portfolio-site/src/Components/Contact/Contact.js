@@ -10,6 +10,7 @@ export default class Contact extends Component {
     this.state = {
       name: "",
       email: "",
+      city: "",
       subject: "",
       message: ""
     };
@@ -21,7 +22,7 @@ export default class Contact extends Component {
 
   handleFormSubmit = () => {
     window.alert("This form is currently under construction.");
-    this.setState({ name: "", email: "", subject: "", message: "" });
+    this.setState({ name: "", email: "", city: "", subject: "", message: "" });
   };
 
   componentWillMount = () => {
@@ -50,6 +51,13 @@ export default class Contact extends Component {
                   placeholder="Email address"
                   name="email"
                   value={this.state.email}
+                  onChange={this.handleFormInput}
+                  fluid
+                />
+                <Form.Input
+                  placeholder="City"
+                  name="city"
+                  value={this.state.city}
                   onChange={this.handleFormInput}
                   fluid
                 />
