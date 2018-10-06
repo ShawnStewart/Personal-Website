@@ -1,3 +1,15 @@
+.SlidingPuzzle__Body {
+  padding: 30px 0;
+}
+
+.SlidingPuzzle__Options {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 #puzzle {
   padding: 1px;
   margin: 50px auto;
@@ -15,4 +27,33 @@
 
 .tile {
   margin: 2px;
+}
+
+@media (max-width: 650px) {
+  #puzzle {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 550px) {
+  .SlidingPuzzle__Options {
+    flex-direction: column;
+  }
+
+  .SlidingPuzzle__Timer {
+    margin: 10px 0;
+  }
+
+  #puzzle {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  #puzzle {
+    width: 300px;
+    height: 300px;
+  }
 }

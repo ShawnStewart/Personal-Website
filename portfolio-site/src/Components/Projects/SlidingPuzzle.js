@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Button, Dropdown } from "semantic-ui-react";
+import Header from "../Header/Header";
 import Numbered from "../../Img/NumberedTiles.jpg";
 import Running from "../../Img/RunningMan.jpeg";
 import "./SlidingPuzzle.css";
@@ -353,39 +354,42 @@ export default class SlidingPuzzle extends Component {
     ];
     return (
       <div className="SlidingPuzzle">
-        <div className="SlidingPuzzle__Header">
-          <Container>
-            <h2 className="SlizingPuzzle__Heading__main">Sliding Puzzle</h2>
+        <Header main={"Sliding Puzzle"} />
+        <div className="SlidingPuzzle__Body">
+          <Container textAlign="center">
+            <Button.Group>
+              <Button
+                onClick={this.randomizePuzzle}
+                disabled={this.state.completed === false}
+                color="teal"
+                content="Scramble"
+              />
+              <Button
+                onClick={this.handleReset}
+                disabled={!this.state.showReset || this.state.completed}
+                color="teal"
+                content="Reset"
+              />
+            </Button.Group>
+            <div className="SlidingPuzzle__Options">
+              <div>
+                <Dropdown
+                  defaultValue={0}
+                  selection
+                  options={pictureOptions}
+                  onChange={this.changeImage}
+                  disabled={this.state.completed === false}
+                />
+              </div>
+              {/* <Button onClick={this.findFewestMoves}>Cheat</Button>
+          <Button onClick={this.cheatTest}>Test</Button> */}
+              <div className="SlidingPuzzle__Timer">Timer: --:--</div>
+              <div>Moves: {this.state.moves}</div>
+            </div>
+            {this.state.completed ? <div>You've won!</div> : null}
+            <div id="puzzle" />
           </Container>
         </div>
-        <Container>
-          Picture:{" "}
-          <Dropdown
-            defaultValue={0}
-            options={pictureOptions}
-            onChange={this.changeImage}
-            disabled={this.state.completed === false}
-          />
-          <Button
-            onClick={this.randomizePuzzle}
-            disabled={this.state.completed === false}
-          >
-            Scramble
-          </Button>
-          <Button
-            onClick={this.handleReset}
-            disabled={!this.state.showReset || this.state.completed}
-          >
-            Reset
-          </Button>
-          {/* <Button onClick={this.findFewestMoves}>Cheat</Button>
-          <Button onClick={this.cheatTest}>Test</Button> */}
-          <div>Moves: {this.state.moves}</div>
-          {this.state.completed ? <div>You've won!</div> : null}
-          <div className="SlidingPuzzle__Body">
-            <div id="puzzle" />
-          </div>
-        </Container>
       </div>
     );
   }
