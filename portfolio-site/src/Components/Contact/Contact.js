@@ -32,7 +32,7 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <div>
+      <div className="ContactInfo">
         <Header main={"Contact Info"} />
         <Container>
           <div className="Contact__Form">
