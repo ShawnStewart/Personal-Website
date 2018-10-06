@@ -20,17 +20,18 @@ export default props => {
           <div className="Section1">
             <img src={selfie} alt="Selfie" className="Selfie" />
             <p className="AboutMe__Content">
-              I am a full stack web developer and graduate of{" "}
-              <a
+              {/* <a
                 href="https://lambdaschool.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Lambda School
-              </a>{" "}
-              as of September 2018. I admire collaborating with talented people
-              to create highly impactful applications. I strive to continuously
-              expand my knowledge to increase my overall value as a developer.
+              </a> */}
+              Hey, I'm Shawn Stewart, a full stack web developer based out of
+              Tampa, Florida. Collaborating with talented people to create high
+              impact applications is something I'm genuinely passionate about.
+              My curiosity drives me to be continuously learning and try new
+              things both inside and out of the development environment.
             </p>
           </div>
         </div>
