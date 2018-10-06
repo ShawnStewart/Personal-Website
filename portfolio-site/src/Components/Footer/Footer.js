@@ -48,7 +48,13 @@ export default props => {
                   <Link
                     to="/contact"
                     className="Footer__Link"
-                    onClick={() => scrollIntoView(".myNav")}
+                    onClick={() => {
+                      return pathname === "/contact"
+                        ? scrollIntoView(".ContactInfo")
+                        : setTimeout(() => {
+                            scrollIntoView(".ContactInfo");
+                          }, 100);
+                    }}
                   >
                     <span>Contact</span>
                   </Link>
@@ -106,7 +112,13 @@ export default props => {
                   <Link
                     to="/contact"
                     className="Footer__Link"
-                    onClick={() => scrollIntoView(".myNav")}
+                    onClick={() => {
+                      return pathname === "/contact"
+                        ? scrollIntoView(".ContactInfo")
+                        : setTimeout(() => {
+                            scrollIntoView(".ContactInfo");
+                          }, 100);
+                    }}
                   >
                     <span>Send a message</span>
                   </Link>
