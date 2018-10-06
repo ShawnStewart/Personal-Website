@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "semantic-ui-react";
+import Header from "../Header/Header";
 import selfie from "../../Img/selfie.jpg";
 import "./About.css";
 
@@ -7,14 +8,7 @@ export default props => {
   props.updateMenu("about");
   return (
     <div className="AboutMe">
-      <div className="About__Header">
-        <Container textAlign="center">
-          <h2 className="Heading__Main">About Shawn</h2>
-          <h3 className="Heading__Secondary">
-            Developer of powerful user-friendly web applications
-          </h3>
-        </Container>
-      </div>
+      <Header main={"About Me"} />
       <Container>
         <div className="About__Body">
           <div className="Section1">
