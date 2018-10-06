@@ -62,7 +62,16 @@ export default props => {
                   <h2>Sliding Puzzle</h2>
                   <div className="Project__BtnGroup">
                     <Button disabled>Learn more</Button>
-                    <Link to="/projects/sliding_puzzle">
+                    <Link
+                      to="/projects/sliding_puzzle"
+                      onClick={() =>
+                        setTimeout(() => {
+                          document
+                            .querySelector(".SlidingPuzzle")
+                            .scrollIntoView({ behavior: "smooth" });
+                        }, 100)
+                      }
+                    >
                       <Button>View the project</Button>
                     </Link>
                   </div>
