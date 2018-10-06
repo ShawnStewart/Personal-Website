@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Form } from "semantic-ui-react";
+import Header from "../Header/Header";
 import Map from "../GoogleMap/GoogleMap";
 import "./Contact.css";
 
@@ -32,11 +33,13 @@ export default class Contact extends Component {
   render() {
     return (
       <div>
+        <Header main={"Contact Info"} />
         <Container>
           <div className="Contact__Form">
-            <p className="Form__Title">
-              If you have any questions or employment/business opportunities,
-              feel free to send me an email at <b>S.Stewart0220@Gmail.com</b>
+            <p className="Form__Title" style={{ textAlign: "center" }}>
+              If you have any feedback, questions or employment/business
+              opportunities, fill out this form or feel free to send me an email
+              directly at <b>shawn@shawnstewart.me</b>.
             </p>
             <Form>
               <Form.Group widths="equal">
