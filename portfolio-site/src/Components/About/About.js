@@ -22,10 +22,11 @@ export default props => {
                 Lambda School
               </a> */}
               Hey, I'm Shawn Stewart, a full stack web developer based out of
-              Tampa, Florida. Collaborating with talented people to create high
-              impact applications is something I'm genuinely passionate about.
-              My curiosity drives me to be continuously learning and try new
-              things both inside and out of the development environment.
+              Tampa, Florida. Collaborating with talented people to create
+              highly-impacting and user-friendly applications is something I'm
+              incredibly passionate about. My curiosity drives me to
+              continuously learn and try new things both inside and out of the
+              development environment.
             </p>
           </div>
         </div>
