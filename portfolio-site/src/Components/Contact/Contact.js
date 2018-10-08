@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Container, Form } from "semantic-ui-react";
+import { Container, Form, Message } from "semantic-ui-react";
 import Header from "../Header/Header";
 import Map from "../GoogleMap/GoogleMap";
+import axios from "axios";
 import "./Contact.css";
 
 export default class Contact extends Component {
@@ -11,9 +12,10 @@ export default class Contact extends Component {
     this.state = {
       name: "",
       email: "",
-      city: "",
+      location: "",
       subject: "",
-      message: ""
+      message: "",
+      messageSent: false
     };
   }
 
@@ -22,8 +24,19 @@ export default class Contact extends Component {
   };
 
   handleFormSubmit = () => {
-    window.alert("This form is currently under construction.");
-    this.setState({ name: "", email: "", city: "", subject: "", message: "" });
+    axios
+      .post(`${process.env.REACT_APP_URL}/api/contact/send-message`, this.state)
+      .then(res => {
+        this.setState({
+          name: "",
+          email: "",
+          location: "",
+          subject: "",
+          message: "",
+          messageSent: true
+        });
+      })
+      .catch(err => console.log(err));
   };
 
   componentWillMount = () => {
@@ -58,9 +71,9 @@ export default class Contact extends Component {
                   fluid
                 />
                 <Form.Input
-                  placeholder="City"
-                  name="city"
-                  value={this.state.city}
+                  placeholder="Location"
+                  name="location"
+                  value={this.state.location}
                   onChange={this.handleFormInput}
                   fluid
                 />
@@ -86,6 +99,11 @@ export default class Contact extends Component {
                 onClick={this.handleFormSubmit}
               />
             </Form>
+            {this.state.messageSent ? (
+              <Message color="teal">
+                Thanks! Your message has been sent.
+              </Message>
+            ) : null}
           </div>
         </Container>
         <Map />
