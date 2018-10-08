@@ -15,7 +15,8 @@ export default class Contact extends Component {
       location: "",
       subject: "",
       message: "",
-      messageSent: false
+      messageSent: false,
+      errors: {}
     };
   }
 
@@ -33,10 +34,15 @@ export default class Contact extends Component {
           location: "",
           subject: "",
           message: "",
-          messageSent: true
+          messageSent: true,
+          errors: {}
         });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        let errors = Object.assign({}, this.state.errors);
+        errors = { ...err.response.data };
+        this.setState({ errors });
+      });
   };
 
   componentWillMount = () => {
@@ -44,6 +50,8 @@ export default class Contact extends Component {
   };
 
   render() {
+    console.log(this.state);
+    const { errors } = this.state;
     return (
       <div className="ContactInfo">
         <Header main={"Contact Info"} />
@@ -61,6 +69,7 @@ export default class Contact extends Component {
                   name="name"
                   value={this.state.name}
                   onChange={this.handleFormInput}
+                  error={Boolean(errors.name)}
                   fluid
                 />
                 <Form.Input
@@ -68,6 +77,7 @@ export default class Contact extends Component {
                   name="email"
                   value={this.state.email}
                   onChange={this.handleFormInput}
+                  error={Boolean(errors.email)}
                   fluid
                 />
                 <Form.Input
@@ -86,11 +96,12 @@ export default class Contact extends Component {
                 fluid
               />
               <Form.TextArea
+                rows="6"
                 placeholder="Message"
                 name="message"
                 value={this.state.message}
                 onChange={this.handleFormInput}
-                rows="6"
+                error={Boolean(errors.message)}
                 autoHeight
               />
               <Form.Button

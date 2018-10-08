@@ -1,9 +1,17 @@
 const router = require("express").Router();
 const nodemailer = require("nodemailer");
 
+const validateMessage = require("../../Validation/sendMessage");
+
 router.get("/test", (req, res) => res.json({ msg: "api test" }));
 
 router.post("/contact/send-message", (req, res) => {
+  const { errors, isValid } = validateMessage(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   const output = `
     <p><b>From:</b> ${req.body.name} &lt;${req.body.email}&gt;</p>
     <p><b>Location:</b> ${req.body.location}</p>
