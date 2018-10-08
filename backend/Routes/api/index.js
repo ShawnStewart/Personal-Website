@@ -14,7 +14,9 @@ router.post("/contact/send-message", (req, res) => {
 
   const output = `
     <p><b>From:</b> ${req.body.name} &lt;${req.body.email}&gt;</p>
-    <p><b>Location:</b> ${req.body.location}</p>
+    <p><b>Location:</b> ${
+      req.body.location ? req.body.location : "Not provided"
+    }</p>
     <p>${req.body.message}</p>
   `;
 
@@ -32,7 +34,7 @@ router.post("/contact/send-message", (req, res) => {
 
   let mailOptions = {
     to: process.env.NM_RECEIVER,
-    subject: req.body.subject,
+    subject: req.body.subject ? req.body.subject : "Contact from Website",
     html: output
   };
 
