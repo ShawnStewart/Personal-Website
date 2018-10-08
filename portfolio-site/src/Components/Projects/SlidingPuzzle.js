@@ -13,7 +13,9 @@ export default class SlidingPuzzle extends Component {
       picture: 0,
       completed: null,
       showReset: false,
-      moves: 0
+      timerOn: false,
+      moves: 0,
+      timer: 0
     };
   }
 
@@ -73,7 +75,7 @@ export default class SlidingPuzzle extends Component {
   };
 
   randomizePuzzle = () => {
-    this.setState({ completed: false, moves: 0 });
+    this.setState({ completed: false, moves: 0, timer: 0 });
     setTimeout(() => {
       this.setState({ showReset: true });
     }, 6500);
@@ -128,7 +130,8 @@ export default class SlidingPuzzle extends Component {
   };
 
   handleReset = () => {
-    this.setState({ showReset: false });
+    if (this.state.timerOn) this.stopTimer();
+    this.setState({ showReset: false, timerOn: false, moves: 0, timer: 0 });
     this.splitImage();
   };
 
@@ -276,8 +279,22 @@ export default class SlidingPuzzle extends Component {
     this.swapTiles(p, p.childNodes[10], p.childNodes[11]);
   };
 
+  startTimer = () => {
+    this.myInterval = setInterval(() => {
+      this.setState({ timer: this.state.timer + 1 });
+    }, 1000);
+  };
+
+  stopTimer = () => {
+    clearInterval(this.myInterval);
+  };
+
   handleTileClick = e => {
     if (this.state.completed) return;
+    if (!this.state.timerOn) {
+      this.startTimer();
+      this.setState({ timerOn: true });
+    }
     const puzzle = document.getElementById("puzzle");
     const empty = document.getElementById("empty");
     let childNodes = [].slice.call(puzzle.childNodes);
@@ -329,7 +346,8 @@ export default class SlidingPuzzle extends Component {
         return;
       }
     }
-    this.setState({ completed: true, showReset: false });
+    this.stopTimer();
+    this.setState({ completed: true, showReset: false, timerOn: false });
   };
 
   componentWillMount = () => {
@@ -383,7 +401,10 @@ export default class SlidingPuzzle extends Component {
               </div>
               {/* <Button onClick={this.findFewestMoves}>Cheat</Button>
           <Button onClick={this.cheatTest}>Test</Button> */}
-              <div className="SlidingPuzzle__Timer">Timer: --:--</div>
+              <div className="SlidingPuzzle__Timer">{`Timer: ${Math.floor(
+                this.state.timer / 60
+              )}:${this.state.timer % 60 < 10 ? "0" : ""}${this.state.timer %
+                60}`}</div>
               <div>Moves: {this.state.moves}</div>
             </div>
             {this.state.completed ? <div>You've won!</div> : null}
