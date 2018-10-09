@@ -61,7 +61,6 @@ router.get("/projects/sliding-puzzle/hiscores", (req, res) => {
     if (err) throw err;
     return res.json(results);
   });
-  client.end();
 });
 
 module.exports = router;
