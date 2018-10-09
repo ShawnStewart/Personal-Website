@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Button, Dropdown } from "semantic-ui-react";
+import { Container, Button, Dropdown, Input } from "semantic-ui-react";
 import Header from "../Header/Header";
 import axios from "axios";
 import Numbered from "../../Img/NumberedTiles.jpg";
@@ -16,7 +16,8 @@ export default class SlidingPuzzle extends Component {
       showReset: false,
       timerOn: false,
       moves: 0,
-      timer: 0
+      timer: 0,
+      username: ""
     };
   }
 
@@ -348,19 +349,21 @@ export default class SlidingPuzzle extends Component {
       }
     }
     this.stopTimer();
-    console.log("sending score to db");
+    this.setState({ completed: true, showReset: false, timerOn: false });
+  };
+
+  submitScore = () => {
     axios
       .post(
         `${process.env.REACT_APP_URL}/api/projects/sliding-puzzle/hiscores`,
         {
-          username: "TESTUSER",
+          username: this.state.username,
           moves: this.state.moves,
           time: this.state.timer
         }
       )
       .then(res => console.log(res))
       .catch(err => console.log(err));
-    this.setState({ completed: true, showReset: false, timerOn: false });
   };
 
   componentWillMount = () => {
@@ -420,7 +423,19 @@ export default class SlidingPuzzle extends Component {
                 60}`}</div>
               <div>Moves: {this.state.moves}</div>
             </div>
-            {this.state.completed ? <div>You've won!</div> : null}
+            {this.state.completed ? (
+              <div>
+                <p>Congratulations, you've won!</p>
+                <Input
+                  placeholder="Enter your name"
+                  value={this.state.username}
+                  onChange={(e, { value }) =>
+                    this.setState({ username: value })
+                  }
+                />
+                <Button content="Submit" onClick={this.submitScore} />
+              </div>
+            ) : null}
             <div id="puzzle" />
           </Container>
         </div>
