@@ -59,7 +59,7 @@ export default class Contact extends Component {
             <p className="Form__Title" style={{ textAlign: "center" }}>
               If you have any feedback, questions or employment/business
               opportunities, fill out this form or feel free to send me an email
-              directly at <b>shawn@shawnstewart.me</b>.
+              directly at <b>Shawn@shawnstewart.me</b>.
             </p>
             <Form>
               <Form.Group widths="equal">
