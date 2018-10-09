@@ -56,10 +56,17 @@ router.post("/contact/send-message", (req, res) => {
 
 router.get("/projects/sliding-puzzle/hiscores", (req, res) => {
   const query = "SELECT * FROM puzzlehiscores LIMIT 10;";
-  client.connect();
-  client.query(query, (err, results) => {
-    if (err) throw err;
-    return res.json(results);
+  client.connect().then(connection => {
+    return connection
+      .query(query)
+      .then(results => {
+        connection.release();
+        return results.rows;
+      })
+      .catch(err => {
+        connection.release();
+        console.log(err);
+      });
   });
 });
 
