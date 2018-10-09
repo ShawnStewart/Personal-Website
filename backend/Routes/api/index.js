@@ -4,11 +4,6 @@ const { Client } = require("pg");
 
 const validateMessage = require("../../Validation/sendMessage");
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true
-});
-
 router.get("/test", (req, res) => res.json({ msg: "api test" }));
 
 router.post("/contact/send-message", (req, res) => {
@@ -55,6 +50,10 @@ router.post("/contact/send-message", (req, res) => {
 });
 
 router.get("/projects/sliding-puzzle/hiscores", (req, res) => {
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
+  });
   const query = "SELECT * FROM puzzlehiscores LIMIT 10;";
   client.connect();
   return client
