@@ -348,14 +348,18 @@ export default class SlidingPuzzle extends Component {
       }
     }
     this.stopTimer();
-    axios.post(
-      `${process.env.REACT_APP_URL}/api/projects/sliding-puzzle/hiscores`,
-      {
-        username: "TESTUSER",
-        moves: this.state.moves,
-        time: this.state.timer
-      }
-    );
+    console.log("sending score to db");
+    axios
+      .post(
+        `${process.env.REACT_APP_URL}/api/projects/sliding-puzzle/hiscores`,
+        {
+          username: "TESTUSER",
+          moves: this.state.moves,
+          time: this.state.timer
+        }
+      )
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
     this.setState({ completed: true, showReset: false, timerOn: false });
   };
 
