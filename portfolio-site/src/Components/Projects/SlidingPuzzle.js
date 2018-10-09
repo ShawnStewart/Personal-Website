@@ -348,7 +348,6 @@ export default class SlidingPuzzle extends Component {
       }
     }
     this.stopTimer();
-    this.setState({ completed: true, showReset: false, timerOn: false });
     axios.post(
       `${process.env.REACT_APP_URL}/api/projects/sliding-puzzle/hiscores`,
       {
@@ -357,6 +356,7 @@ export default class SlidingPuzzle extends Component {
         time: this.state.timer
       }
     );
+    this.setState({ completed: true, showReset: false, timerOn: false });
   };
 
   componentWillMount = () => {

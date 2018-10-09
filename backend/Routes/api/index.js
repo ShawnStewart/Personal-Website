@@ -72,14 +72,15 @@ router.get("/projects/sliding-puzzle/hiscores", (req, res) => {
 });
 
 router.post("/projects/sliding-puzzle/hiscores", (req, res) => {
+  const { username, moves, time } = req.body;
+
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true
   });
 
-  const query = `INSERT INTO puzzlehiscores (username, moves, time) VALUES ('${
-    req.body.username
-  }', ${req.body.moves}, ${req.body.time});`;
+  const query = `INSERT INTO puzzlehiscores (username, moves, time) VALUES ('${username}', ${moves}, ${time});`;
+  console.log(query);
 
   client.connect();
 
