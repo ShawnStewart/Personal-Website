@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Button, Dropdown } from "semantic-ui-react";
 import Header from "../Header/Header";
+import axios from "axios";
 import Numbered from "../../Img/NumberedTiles.jpg";
 import Running from "../../Img/RunningMan.jpeg";
 import "./SlidingPuzzle.css";
@@ -348,6 +349,14 @@ export default class SlidingPuzzle extends Component {
     }
     this.stopTimer();
     this.setState({ completed: true, showReset: false, timerOn: false });
+    axios.post(
+      `${process.env.REACT_APP_URL}/api/projects/sliding-puzzle/hiscores`,
+      {
+        username: "TESTUSER",
+        moves: this.state.moves,
+        time: this.state.timer
+      }
+    );
   };
 
   componentWillMount = () => {

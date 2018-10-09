@@ -54,8 +54,35 @@ router.get("/projects/sliding-puzzle/hiscores", (req, res) => {
     connectionString: process.env.DATABASE_URL,
     ssl: true
   });
+
   const query = "SELECT * FROM puzzlehiscores LIMIT 10;";
+
   client.connect();
+
+  return client
+    .query(query)
+    .then(results => {
+      client.end();
+      return res.json(results.rows);
+    })
+    .catch(err => {
+      client.end();
+      return res.status(400).json(err);
+    });
+});
+
+router.post("/projects/sliding-puzzle/hiscores", (req, res) => {
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true
+  });
+
+  const query = `INSERT INTO puzzlehiscores (username, moves, time) VALUES ('${
+    req.body.username
+  }', ${req.body.moves}, ${req.body.time});`;
+
+  client.connect();
+
   return client
     .query(query)
     .then(results => {
