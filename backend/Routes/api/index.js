@@ -1,7 +1,13 @@
 const router = require("express").Router();
 const nodemailer = require("nodemailer");
+const { Client } = require("pg");
 
 const validateMessage = require("../../Validation/sendMessage");
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true
+});
 
 router.get("/test", (req, res) => res.json({ msg: "api test" }));
 
@@ -46,6 +52,16 @@ router.post("/contact/send-message", (req, res) => {
 
     res.json({ success: true, info });
   });
+});
+
+router.get("/projects/sliding-puzzle/hiscores", (req, res) => {
+  const query = "SELECT * FROM puzzlehiscores LIMIT 10;";
+  client.connect();
+  client.query(query, (err, results) => {
+    if (err) throw err;
+    return res.json(results);
+  });
+  client.end();
 });
 
 module.exports = router;
