@@ -3,7 +3,7 @@ import { Container, Button, Dropdown, Input } from "semantic-ui-react";
 import Header from "../Header/Header";
 import axios from "axios";
 import Numbered from "../../Img/NumberedTiles.jpg";
-import Running from "../../Img/RunningMan.jpeg";
+import Running from "../../Img/RunningMan.jpg";
 import "./SlidingPuzzle.css";
 
 export default class SlidingPuzzle extends Component {
