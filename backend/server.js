@@ -1,4 +1,5 @@
 require("dotenv").config();
+let http = require("http");
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -6,6 +7,11 @@ const cors = require("cors");
 const port = process.env.PORT || 4000;
 
 const routes = require("./Routes/api");
+
+// Keep heroku awake
+setInterval(() => {
+  http.get("http://www.shawnstewart.me", res => console.log("sent"));
+}, 1200000);
 
 // Serve static files from React App
 app.use(express.static(path.join(__dirname + "/../portfolio-site/build")));
