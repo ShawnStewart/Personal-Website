@@ -24,7 +24,7 @@ export default props => {
                   <Link
                     to="/about"
                     className="Footer__Link"
-                    onClick={() => scrollIntoView(".myNav")}
+                    onClick={() => scrollIntoView(".Header")}
                   >
                     <span>About</span>
                   </Link>
@@ -35,9 +35,9 @@ export default props => {
                     className="Footer__Link"
                     onClick={() => {
                       return pathname === "/"
-                        ? scrollIntoView(".Portfolio__Body")
+                        ? scrollIntoView(".Header")
                         : setTimeout(() => {
-                            scrollIntoView(".Portfolio__Body");
+                            scrollIntoView(".Header");
                           }, 100);
                     }}
                   >
@@ -50,9 +50,9 @@ export default props => {
                     className="Footer__Link"
                     onClick={() => {
                       return pathname === "/contact"
-                        ? scrollIntoView(".ContactInfo")
+                        ? scrollIntoView(".Header")
                         : setTimeout(() => {
-                            scrollIntoView(".ContactInfo");
+                            scrollIntoView(".Header");
                           }, 100);
                     }}
                   >
@@ -114,9 +114,9 @@ export default props => {
                     className="Footer__Link"
                     onClick={() => {
                       return pathname === "/contact"
-                        ? scrollIntoView(".ContactInfo")
+                        ? scrollIntoView(".Header")
                         : setTimeout(() => {
-                            scrollIntoView(".ContactInfo");
+                            scrollIntoView(".Header");
                           }, 100);
                     }}
                   >
@@ -143,9 +143,9 @@ export default props => {
             className="Footer__Link"
             onClick={() => {
               return pathname === "/"
-                ? scrollIntoView(".Portfolio__Body")
+                ? scrollIntoView(".myNav")
                 : setTimeout(() => {
-                    scrollIntoView(".Portfolio__Body");
+                    scrollIntoView(".myNav");
                   }, 100);
             }}
           >
