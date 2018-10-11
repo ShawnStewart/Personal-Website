@@ -79,7 +79,7 @@ export default props => {
                 </li>
                 <li>
                   <a
-                    href="https://www.linkedin.com/in/shawn-stewart-05b78a169/"
+                    href="https://www.linkedin.com/in/shawn-stewart/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="Footer__Link"
