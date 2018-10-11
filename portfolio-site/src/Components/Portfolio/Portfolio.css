@@ -4,7 +4,6 @@
   background-size: cover;
   background-attachment: fixed;
   background-position-x: center;
-  background-position-y: -150px;
   background-repeat: no-repeat;
 
   display: flex;
@@ -91,10 +90,11 @@
 
 .Project2__Visible {
   background-color: olive;
-  background-image: url("../../Img/NumberedTilesBlurred.jpg");
+  background-image: url("../../Img/15puzzle.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  color: cyan;
+  /* color: cyan; */
 }
 
 .Project2__Hidden {
@@ -106,10 +106,11 @@
 }
 
 .Project3__Visible {
-  background-image: url("../../Img/LambdaNotesBlurred.jpg");
-  background-size: stretch;
+  background-image: url("../../Img/notepad.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position-x: 60%;
-  color: cornflowerblue;
+  /* color: cornflowerblue; */
 }
 
 .Project3__Hidden {
@@ -130,9 +131,9 @@
 }
 
 .Project5__Visible {
-  background-image: url("../../Img/Checkers.jpg");
+  background-image: url("../../Img/checkers2.jpg");
   background-size: cover;
-  color: greenyellow;
+  /* color: greenyellow; */
 }
 
 .Project5__Hidden {

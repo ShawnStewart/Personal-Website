@@ -1,20 +1,15 @@
 import React from "react";
 import { Container, Reveal, Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import Header from "../Header/Header";
+import Logos from "../LogoSection/LogoSection";
 import "./Portfolio.css";
 
 export default props => {
   props.updateMenu("portfolio");
   return (
     <div className="Portfolio">
-      <div className="Portfolio__Header">
-        <Container>
-          <h1 className="Portfolio__Heading__Main">Full Stack Web Developer</h1>
-          <p className="Portfolio__Heading__Secondary">
-            Based out of Tampa, Florida.
-          </p>
-        </Container>
-      </div>
+      <Header main="Projects" />
       <Container>
         <div className="Portfolio__Body">
           <div className="Portfolio__Project Project1">
@@ -175,6 +170,15 @@ export default props => {
           </div>
         </div>
       </Container>
+      <Logos />
+      <div className="Portfolio__Header">
+        <Container>
+          <h1 className="Portfolio__Heading__Main">Full Stack Web Developer</h1>
+          <p className="Portfolio__Heading__Secondary">
+            Based out of Tampa, Florida.
+          </p>
+        </Container>
+      </div>
     </div>
   );
 };
