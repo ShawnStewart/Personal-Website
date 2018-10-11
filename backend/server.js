@@ -10,7 +10,7 @@ const routes = require("./Routes/api");
 
 // Keep heroku awake
 setInterval(() => {
-  http.get("http://www.shawnstewart.me", res => console.log("sent"));
+  http.get("http://www.shawnstewart.me");
 }, 1200000);
 
 // Serve static files from React App
