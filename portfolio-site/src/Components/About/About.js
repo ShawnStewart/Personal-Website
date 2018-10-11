@@ -2,6 +2,7 @@ import React from "react";
 import { Container } from "semantic-ui-react";
 import Header from "../Header/Header";
 import selfie from "../../Img/selfie.jpg";
+import Logos from "../LogoSection/LogoSection";
 import "./About.css";
 
 export default props => {
@@ -31,6 +32,7 @@ export default props => {
           </div>
         </div>
       </Container>
+      <Logos />
     </div>
   );
 };
