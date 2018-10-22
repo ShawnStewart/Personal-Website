@@ -427,7 +427,7 @@ export default class SlidingPuzzle extends Component {
             </div>
             {this.state.completed ? (
               this.state.submitSuccess ? (
-                <p>Success</p>
+                <p>Your score was saved successfully!</p>
               ) : (
                 <div>
                   <p>
