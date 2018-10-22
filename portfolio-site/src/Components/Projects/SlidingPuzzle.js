@@ -17,7 +17,9 @@ export default class SlidingPuzzle extends Component {
       timerOn: false,
       moves: 0,
       timer: 0,
-      username: ""
+      username: "",
+      submitError: false,
+      submitSuccess: false
     };
   }
 
@@ -363,7 +365,7 @@ export default class SlidingPuzzle extends Component {
         }
       )
       .then(res => console.log(res))
-      .catch(err => console.log(err));
+      .catch(err => this.setState({ submitError: true }));
   };
 
   componentWillMount = () => {
@@ -424,17 +426,27 @@ export default class SlidingPuzzle extends Component {
               <div>Moves: {this.state.moves}</div>
             </div>
             {this.state.completed ? (
-              <div>
-                <p>Congratulations, you've won!</p>
-                <Input
-                  placeholder="Enter your name"
-                  value={this.state.username}
-                  onChange={(e, { value }) =>
-                    this.setState({ username: value })
-                  }
-                />
-                <Button content="Submit" onClick={this.submitScore} />
-              </div>
+              this.state.submitSuccess ? (
+                <p>Success</p>
+              ) : (
+                <div>
+                  <p>
+                    Congratulations, you've won! Enter your name for the
+                    hiscores.
+                  </p>
+                  <Input
+                    placeholder="Enter your name"
+                    value={this.state.username}
+                    onChange={(e, { value }) =>
+                      this.setState({ username: value })
+                    }
+                  />
+                  <Button content="Submit" onClick={this.submitScore} />
+                  {this.state.submitError ? (
+                    <p>Sorry, there was an error saving your score...</p>
+                  ) : null}
+                </div>
+              )
             ) : null}
             <div id="puzzle" />
           </Container>
