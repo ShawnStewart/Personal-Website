@@ -364,7 +364,7 @@ export default class SlidingPuzzle extends Component {
           time: this.state.timer
         }
       )
-      .then(res => console.log(res))
+      .then(res => this.setState({ submitError: false, submitSuccess: true }))
       .catch(err => this.setState({ submitError: true }));
   };
 
