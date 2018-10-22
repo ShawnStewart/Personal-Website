@@ -55,7 +55,7 @@ router.get("/projects/sliding-puzzle/hiscores", (req, res) => {
     ssl: true
   });
 
-  const query = "SELECT * FROM puzzlehiscores ORDER BY time;";
+  const query = "SELECT * FROM puzzle_hiscores ORDER BY time;";
 
   client.connect();
 
@@ -79,7 +79,7 @@ router.post("/projects/sliding-puzzle/hiscores", (req, res) => {
     ssl: true
   });
 
-  const query = `INSERT INTO puzzlehiscores (username, moves, time) VALUES ('${username}', ${moves}, ${time});`;
+  const query = `INSERT INTO puzzle_hiscores (username, moves, time) VALUES ('${username}', ${moves}, ${time});`;
 
   client.connect();
 
