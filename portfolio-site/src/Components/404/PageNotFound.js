@@ -3,7 +3,9 @@ import { Container } from "semantic-ui-react";
 import "./PageNotFound.css";
 
 export default props => {
-  props.updateMenu("404: Page not found");
+  setTimeout(() => {
+    props.updateMenu("404: Page not found");
+  }, 100);
   return (
     <div className="PageNotFound">
       <div className="PageNotFound__Header">
