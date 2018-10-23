@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Container, Button, Dropdown, Input } from "semantic-ui-react";
 import Header from "../Header/Header";
 import axios from "axios";
@@ -393,20 +394,25 @@ export default class SlidingPuzzle extends Component {
         <Header main={"Sliding Puzzle"} />
         <div className="SlidingPuzzle__Body">
           <Container textAlign="center">
-            <Button.Group>
-              <Button
-                onClick={this.randomizePuzzle}
-                disabled={this.state.completed === false}
-                color="teal"
-                content="Scramble"
-              />
-              <Button
-                onClick={this.handleReset}
-                disabled={!this.state.showReset || this.state.completed}
-                color="teal"
-                content="Reset"
-              />
-            </Button.Group>
+            <div className="SlidingPuzzle__Buttons">
+              <Button.Group>
+                <Button
+                  onClick={this.randomizePuzzle}
+                  disabled={this.state.completed === false}
+                  color="teal"
+                  content="Scramble"
+                />
+                <Button
+                  onClick={this.handleReset}
+                  disabled={!this.state.showReset || this.state.completed}
+                  color="teal"
+                  content="Reset"
+                />
+              </Button.Group>
+              <Link to="/projects/sliding-puzzle/hiscores">
+                <Button color="teal" content="Hiscores" />
+              </Link>
+            </div>
             <div className="SlidingPuzzle__Options">
               <div>
                 <Dropdown

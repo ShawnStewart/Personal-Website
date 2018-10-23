@@ -2,6 +2,18 @@
   padding: 30px 0;
 }
 
+.SlidingPuzzle__Buttons {
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.SlidingPuzzle__Buttons div {
+  margin-right: 10px !important;
+}
+
 .SlidingPuzzle__Options {
   padding: 10px 0;
   display: flex;

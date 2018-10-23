@@ -58,7 +58,7 @@ export default props => {
                   <div className="Project__BtnGroup">
                     <Button disabled>Learn more</Button>
                     <Link
-                      to="/projects/sliding_puzzle"
+                      to="/projects/sliding-puzzle"
                       onClick={() =>
                         setTimeout(() => {
                           document

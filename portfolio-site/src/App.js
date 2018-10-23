@@ -68,7 +68,8 @@ class App extends Component {
                 )}
               />
               <Route
-                path="/projects/sliding_puzzle"
+                exact
+                path="/projects/sliding-puzzle"
                 render={props => (
                   <SlidingPuzzle
                     {...props}
