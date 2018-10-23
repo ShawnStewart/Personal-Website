@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, Dropdown, Input } from "semantic-ui-react";
-import Header from "../Header/Header";
+import Header from "../../Header/Header";
 import axios from "axios";
-import Numbered from "../../Img/NumberedTiles.jpg";
-import Running from "../../Img/RunningMan.jpg";
+import Numbered from "../../../Img/NumberedTiles.jpg";
+import Running from "../../../Img/RunningMan.jpg";
 import "./SlidingPuzzle.css";
 
 export default class SlidingPuzzle extends Component {
@@ -443,9 +443,11 @@ export default class SlidingPuzzle extends Component {
                   <Input
                     placeholder="Enter your name"
                     value={this.state.username}
-                    onChange={(e, { value }) =>
-                      this.setState({ username: value })
-                    }
+                    onChange={(e, { value }) => {
+                      if (value.length <= 16) {
+                        this.setState({ username: value });
+                      }
+                    }}
                   />
                   <Button content="Submit" onClick={this.submitScore} />
                   {this.state.submitError ? (

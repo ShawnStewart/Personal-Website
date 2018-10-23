@@ -11,7 +11,8 @@ import About from "./Components/About/About";
 import Portfolio from "./Components/Portfolio/Portfolio";
 import Footer from "./Components/Footer/Footer";
 import PageNotFound from "./Components/404/PageNotFound";
-import SlidingPuzzle from "./Components/Projects/SlidingPuzzle";
+import SlidingPuzzle from "./Components/Projects/SlidingPuzzle/SlidingPuzzle";
+import SlidingPuzzleHiscores from "./Components/Projects/SlidingPuzzle/Hiscores";
 import Contact from "./Components/Contact/Contact";
 
 class App extends Component {
@@ -72,6 +73,18 @@ class App extends Component {
                 path="/projects/sliding-puzzle"
                 render={props => (
                   <SlidingPuzzle
+                    {...props}
+                    updateMenu={name =>
+                      this.nav ? this.nav.setActiveMenuItem(name) : null
+                    }
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/projects/sliding-puzzle/hiscores"
+                render={props => (
+                  <SlidingPuzzleHiscores
                     {...props}
                     updateMenu={name =>
                       this.nav ? this.nav.setActiveMenuItem(name) : null
