@@ -56,7 +56,7 @@ router.get("/projects/sliding-puzzle/hiscores", (req, res) => {
   });
 
   const query =
-    "select rank() over (order by time, moves), username, time, moves from puzzle_hiscores;";
+    "select rank() over (order by time, moves, created_on), username, time, moves, picture, created_on from puzzle_hiscores;";
 
   client.connect();
 
@@ -73,14 +73,14 @@ router.get("/projects/sliding-puzzle/hiscores", (req, res) => {
 });
 
 router.post("/projects/sliding-puzzle/hiscores", (req, res) => {
-  const { username, moves, time } = req.body;
+  const { username, moves, time, picture } = req.body;
 
   const client = new Client({
     connectionString: process.env.DATABASE_URL,
     ssl: true
   });
 
-  const query = `INSERT INTO puzzle_hiscores (username, moves, time) VALUES ('${username}', ${moves}, ${time});`;
+  const query = `insert into puzzle_hiscores (username, moves, time, picture) VALUES ('${username}', ${moves}, ${time}, '${picture}');`;
 
   client.connect();
 

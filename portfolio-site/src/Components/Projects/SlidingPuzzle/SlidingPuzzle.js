@@ -129,7 +129,7 @@ export default class SlidingPuzzle extends Component {
         }, 25 * i);
       })(i);
     };
-    for (let i = 0; i < 250; i++) {
+    for (let i = 0; i < 1; i++) {
       randomizeDelay(i);
     }
   };
@@ -355,17 +355,20 @@ export default class SlidingPuzzle extends Component {
     this.setState({ completed: true, showReset: false, timerOn: false });
   };
 
-  submitScore = () => {
+  submitScore = picture => {
     axios
       .post(
         `${process.env.REACT_APP_URL}/api/projects/sliding-puzzle/hiscores`,
         {
           username: this.state.username,
           moves: this.state.moves,
-          time: this.state.timer
+          time: this.state.timer,
+          picture
         }
       )
-      .then(res => this.setState({ submitError: false, submitSuccess: true }))
+      .then(res =>
+        this.setState({ username: "", submitError: false, submitSuccess: true })
+      )
       .catch(err => this.setState({ submitError: true }));
   };
 
@@ -449,7 +452,12 @@ export default class SlidingPuzzle extends Component {
                       }
                     }}
                   />
-                  <Button content="Submit" onClick={this.submitScore} />
+                  <Button
+                    content="Submit"
+                    onClick={() => {
+                      this.submitScore(pictureOptions[this.state.picture].text);
+                    }}
+                  />
                   {this.state.submitError ? (
                     <p>Sorry, there was an error saving your score...</p>
                   ) : null}
