@@ -129,7 +129,7 @@ export default class SlidingPuzzle extends Component {
         }, 25 * i);
       })(i);
     };
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 250; i++) {
       randomizeDelay(i);
     }
   };
