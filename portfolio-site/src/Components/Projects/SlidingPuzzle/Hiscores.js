@@ -48,14 +48,8 @@ export default class Hiscores extends Component {
                       <Table.Cell>{elem.time}</Table.Cell>
                       <Table.Cell>{elem.moves}</Table.Cell>
                       <Table.Cell>{elem.picture}</Table.Cell>
-                      <Table.Cell>
-                        `$
-                        {d.getMonth() + 1}
-                        -$
-                        {d.getDate() + 1}
-                        -$
-                        {d.getFullYear()}`
-                      </Table.Cell>
+                      <Table.Cell>{`${d.getMonth() + 1}-${d.getDate() +
+                        1}-${d.getFullYear()}`}</Table.Cell>
                     </Table.Row>
                   );
                 })}
