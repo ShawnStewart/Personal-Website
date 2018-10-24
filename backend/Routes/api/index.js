@@ -56,7 +56,7 @@ router.get("/projects/sliding-puzzle/hiscores", (req, res) => {
   });
 
   const query =
-    "select rank() over (order by time, moves, created_on), username, time, moves, picture, created_on from puzzle_hiscores;";
+    "select id, rank() over (order by time, moves, created_on), username, time, moves, picture, created_on from puzzle_hiscores;";
 
   client.connect();
 
