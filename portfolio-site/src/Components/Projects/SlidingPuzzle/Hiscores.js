@@ -31,7 +31,7 @@ export default class Hiscores extends Component {
                 <Table.Row>
                   <Table.HeaderCell>#</Table.HeaderCell>
                   <Table.HeaderCell>Username</Table.HeaderCell>
-                  <Table.HeaderCell>Time</Table.HeaderCell>
+                  <Table.HeaderCell>Time (s)</Table.HeaderCell>
                   <Table.HeaderCell>Moves</Table.HeaderCell>
                   <Table.HeaderCell>Picture</Table.HeaderCell>
                   <Table.HeaderCell>Date</Table.HeaderCell>
@@ -40,7 +40,7 @@ export default class Hiscores extends Component {
 
               <Table.Body>
                 {this.state.data.map(elem => {
-                  console.log(elem);
+                  const d = new Date(elem.created_on);
                   return (
                     <Table.Row key={elem.id}>
                       <Table.Cell>{elem.rank}</Table.Cell>
@@ -48,7 +48,14 @@ export default class Hiscores extends Component {
                       <Table.Cell>{elem.time}</Table.Cell>
                       <Table.Cell>{elem.moves}</Table.Cell>
                       <Table.Cell>{elem.picture}</Table.Cell>
-                      <Table.Cell>{elem.created_on}</Table.Cell>
+                      <Table.Cell>
+                        `$
+                        {d.getMonth() + 1}
+                        -$
+                        {d.getDate() + 1}
+                        -$
+                        {d.getFullYear()}`
+                      </Table.Cell>
                     </Table.Row>
                   );
                 })}
