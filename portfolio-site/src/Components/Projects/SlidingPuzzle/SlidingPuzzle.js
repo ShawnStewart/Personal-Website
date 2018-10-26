@@ -412,7 +412,14 @@ export default class SlidingPuzzle extends Component {
                   content="Reset"
                 />
               </Button.Group>
-              <Link to="/projects/sliding-puzzle/hiscores">
+              <Link
+                to="/projects/sliding-puzzle/hiscores"
+                onClick={() => {
+                  document
+                    .querySelector(".Header")
+                    .scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+              >
                 <Button color="teal" content="Hiscores" />
               </Link>
             </div>

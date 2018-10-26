@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Container, Table } from "semantic-ui-react";
-import Header from "../../Header/Header";
+import { Link } from "react-router-dom";
+import { Container, Button, Table, Input } from "semantic-ui-react";
 import axios from "axios";
+import Header from "../../Header/Header";
+import "./Hiscores.css";
 
 export default class Hiscores extends Component {
   constructor(props) {
@@ -24,8 +26,25 @@ export default class Hiscores extends Component {
     return (
       <div className="Hiscores">
         <Header main={"Sliding Puzzle Hiscores"} />
-        <div className="Hiscores__body">
+        <div className="Hiscores__Body" style={{ height: "1000px" }}>
           <Container>
+            <div className="Hiscores__Menu">
+              <Link
+                to="/projects/sliding-puzzle"
+                onClick={() => {
+                  document
+                    .querySelector(".Header")
+                    .scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+              >
+                <Button
+                  icon="arrow alternate circle left outline"
+                  content="Back"
+                  color="teal"
+                />
+              </Link>
+              <Input icon="search" disabled />
+            </div>
             <Table celled sortable>
               <Table.Header>
                 <Table.Row>
