@@ -26,7 +26,7 @@ export default class Hiscores extends Component {
     return (
       <div className="Hiscores">
         <Header main={"Sliding Puzzle Hiscores"} />
-        <div className="Hiscores__Body" style={{ height: "1000px" }}>
+        <div className="Hiscores__Body">
           <Container>
             <div className="Hiscores__Menu">
               <Link
