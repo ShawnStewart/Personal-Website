@@ -13,6 +13,7 @@ import Footer from "./Components/Footer/Footer";
 import PageNotFound from "./Components/404/PageNotFound";
 import SlidingPuzzle from "./Components/Projects/SlidingPuzzle/SlidingPuzzle";
 import SlidingPuzzleHiscores from "./Components/Projects/SlidingPuzzle/Hiscores";
+import Snake from "./Components/Projects/Snake/Snake";
 import Contact from "./Components/Contact/Contact";
 
 class App extends Component {
@@ -85,6 +86,18 @@ class App extends Component {
                 path="/projects/sliding-puzzle/hiscores"
                 render={props => (
                   <SlidingPuzzleHiscores
+                    {...props}
+                    updateMenu={name =>
+                      this.nav ? this.nav.setActiveMenuItem(name) : null
+                    }
+                  />
+                )}
+              />
+              <Route
+                exact
+                path="/projects/snake"
+                render={props => (
+                  <Snake
                     {...props}
                     updateMenu={name =>
                       this.nav ? this.nav.setActiveMenuItem(name) : null

@@ -110,13 +110,24 @@ export default props => {
                 className="Project__Reveal noPointerEvents"
               >
                 <div className="visible__content Project4__Visible">
-                  Coming Soon...
+                  Snake Game
                 </div>
               </Reveal.Content>
               <Reveal.Content hidden className="Project__Reveal">
                 <div className="hidden__content Project4__Hidden">
-                  <h2>Coming Soon...</h2>
-                  {/* <Button disabled>Learn more</Button> */}
+                  <h2>Snake Game</h2>
+                  <Link
+                    to="/projects/snake"
+                    onClick={() =>
+                      setTimeout(() => {
+                        document
+                          .querySelector(".Snake")
+                          .scrollIntoView({ behavior: "smooth" });
+                      }, 100)
+                    }
+                  >
+                    <Button>View the project</Button>
+                  </Link>
                 </div>
               </Reveal.Content>
             </Reveal>

@@ -122,8 +122,10 @@
 }
 
 .Project4__Visible {
-  background-image: url("../../Img/lake.jpg");
+  background-image: url("../../Img/snake.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .Project4__Hidden {
