@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
-    "google-map-react": "^1.0.9",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5",
-    "semantic-ui-css": "^2.4.0",
-    "semantic-ui-react": "^0.82.5"
+    "axios": "*",
+    "google-map-react": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-router-dom": "*",
+    "react-scripts": "*",
+    "semantic-ui-css": "*",
+    "semantic-ui-react": "*"
   },
   "scripts": {
     "start": "react-scripts start",
