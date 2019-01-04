@@ -92,7 +92,7 @@ export default props => {
                 </li>
                 <li>
                   <a
-                    href="https://twitter.com/wnCodes"
+                    href="https://twitter.com/integrashawn"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="Footer__Link"
