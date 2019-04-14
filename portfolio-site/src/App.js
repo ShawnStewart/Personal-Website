@@ -137,8 +137,8 @@ class App extends Component {
             <Router>
                 <div className="App">
                     <Switch>
-                        <Route exact path="/" component={Updating} />
                         <Route path="/legacy/" render={legacyApp} />
+                        <Route component={Updating} />
                     </Switch>
                 </div>
             </Router>
