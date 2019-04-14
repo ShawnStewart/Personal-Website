@@ -1,0 +1,40 @@
+#UpdatingContainer {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#UpdatingCanvas {
+    box-sizing: border-box;
+    background: -webkit-linear-gradient(#00111e 15%, #033d5e);
+    background: -moz-linear-gradient(#00111e 15%, #033d5e);
+    background: -o-linear-gradient(#00111e 15%, #033d5e);
+    background: linear-gradient(#00111e 15%, #033d5e);
+    overflow: hidden;
+}
+
+#UpdatingText {
+    position: absolute;
+    top: 0;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#iconList {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+#iconList a {
+    color: white;
+}
+
+#iconList i {
+    width: 50px;
+}
