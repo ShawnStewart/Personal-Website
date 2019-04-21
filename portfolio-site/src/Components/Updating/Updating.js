@@ -7,16 +7,15 @@ const stars = [];
 
 export default class Updating extends Component {
     componentDidMount() {
+        this.canvas = document.getElementById("UpdatingCanvas");
         this.initCanvas();
 
         // window.addEventListener("resize", this.handleWindowResize);
     }
 
     initCanvas = () => {
-        this.canvas = document.getElementById("UpdatingCanvas");
         this.ctx = this.canvas.getContext("2d");
 
-        // this.handleWindowResize();
         this.canvas.width = window.screen.availWidth;
         this.canvas.height = window.screen.availHeight;
 
@@ -102,7 +101,7 @@ export default class Updating extends Component {
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                <Icon name="github" size="big" color="github" />
+                                <Icon name="github" size="big" />
                             </a>
                         </li>
                         <li>
