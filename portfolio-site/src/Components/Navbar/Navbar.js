@@ -7,14 +7,27 @@ export default class Navbar extends Component {
         super(props);
 
         this.state = {
-            activeMenuItem: "portfolio",
+            activeMenuItem: "",
         };
     }
 
+    componentDidMount = () => {
+        let path = window.location.href;
+        let menuName = path.split(window.location.origin)[1].split("/")[2];
+
+        if (!menuName || menuName.split("/")[0] === "projects") {
+            menuName = "portfolio";
+        }
+
+        this.setActiveMenuItem(menuName);
+    };
+
+    componentWillUnmount = () => {
+        this.props.onRef(undefined);
+    };
+
     setActiveMenuItem = name => {
         this.setState({ activeMenuItem: name });
-
-        // this.updateTitle(name);
     };
 
     handleMenuClick = (e, { name }) => {
@@ -24,8 +37,6 @@ export default class Navbar extends Component {
         if (`/${name}` !== this.props.history.location.pathname) {
             this.props.history.push(`/legacy/${name}`);
         }
-
-        // this.updateTitle(name);
     };
 
     updateTitle = path => {
@@ -33,14 +44,6 @@ export default class Navbar extends Component {
 
         document.title = `${path.charAt(0).toUpperCase() +
             path.slice(1)} | Shawn Stewart - Full Stack Web Developer`;
-    };
-
-    componentDidMount = () => {
-        this.props.onRef(this);
-    };
-
-    componentWillUnmount = () => {
-        this.props.onRef(undefined);
     };
 
     render() {

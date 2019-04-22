@@ -3,25 +3,27 @@ import { Icon } from "semantic-ui-react";
 
 import "./Updating.css";
 
-const stars = [];
+let stars = [];
+let paused = false;
 
 export default class Updating extends Component {
     componentDidMount() {
         this.canvas = document.getElementById("UpdatingCanvas");
-        this.initCanvas();
 
-        // window.addEventListener("resize", this.handleWindowResize);
+        window.addEventListener("resize", this.handleWindowResize);
+
+        this.initCanvas();
     }
 
     initCanvas = () => {
         this.ctx = this.canvas.getContext("2d");
 
-        this.canvas.width = window.screen.availWidth;
-        this.canvas.height = window.screen.availHeight;
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
 
         this.generateStars();
 
-        window.requestAnimationFrame(this.update);
+        this.update();
     };
 
     generateStars = () => {
@@ -55,14 +57,17 @@ export default class Updating extends Component {
                 stars[i].randY > this.canvas.height ? 0 : stars[i].randY + 0.4;
         }
 
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.draw();
-        window.requestAnimationFrame(this.update);
+
+        if (!paused) window.requestAnimationFrame(this.update);
     };
 
     draw = () => {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
         for (let i = 0; i < stars.length; i++) {
             const { randHue, randOpacity, randX, randY, randSize } = stars[i];
+
             if (randSize > 1) {
                 this.ctx.shadowBlur = Math.floor(Math.random() * 15 + 5);
                 this.ctx.shadowColor = "white";
@@ -75,8 +80,19 @@ export default class Updating extends Component {
     };
 
     handleWindowResize = () => {
-        this.canvas.width = window.screen.availWidth;
-        this.canvas.height = window.screen.availHeight;
+        paused = true;
+        clearTimeout(this.resizeWait);
+
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+
+        this.resizeWait = setTimeout(() => {
+            paused = false;
+            stars = [];
+
+            this.generateStars();
+            this.update();
+        }, 100);
     };
 
     render() {

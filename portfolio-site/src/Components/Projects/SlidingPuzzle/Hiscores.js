@@ -26,7 +26,6 @@ export default class Hiscores extends Component {
     };
 
     render() {
-        this.props.updateMenu("portfolio");
         return (
             <div className="Hiscores">
                 <Header main={"Sliding Puzzle Hiscores"} />

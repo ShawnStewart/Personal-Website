@@ -6,7 +6,6 @@ import Logos from "../LogoSection/LogoSection";
 import "./Portfolio.css";
 
 export default props => {
-    props.updateMenu("portfolio");
     return (
         <div className="Portfolio">
             <Header main="Projects" />

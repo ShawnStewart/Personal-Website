@@ -18,14 +18,6 @@ import Contact from "./Components/Contact/Contact";
 import Updating from "./Components/Updating/Updating";
 
 class App extends Component {
-    componentDidMount = () => {
-        let path = window.location.href;
-        path = path.split(window.location.origin)[1].split("/")[2];
-        if (path === undefined || path.split("/")[0] === "projects")
-            path = "portfolio";
-        if (this.nav) this.nav.setActiveMenuItem(path);
-    };
-
     render() {
         const legacyApp = props => (
             <div>
@@ -34,99 +26,36 @@ class App extends Component {
                     <Switch>
                         <Route
                             path="/legacy/about"
-                            render={props => (
-                                <About
-                                    {...props}
-                                    updateMenu={name =>
-                                        this.nav
-                                            ? this.nav.setActiveMenuItem(name)
-                                            : null
-                                    }
-                                />
-                            )}
+                            render={props => <About {...props} />}
                         />
                         <Route
                             exact
                             path="/legacy/"
-                            render={props => (
-                                <Portfolio
-                                    {...props}
-                                    updateMenu={name =>
-                                        this.nav
-                                            ? this.nav.setActiveMenuItem(name)
-                                            : null
-                                    }
-                                />
-                            )}
+                            render={props => <Portfolio {...props} />}
                         />
                         <Route
                             exact
                             path="/legacy/contact"
-                            render={props => (
-                                <Contact
-                                    {...props}
-                                    updateMenu={name =>
-                                        this.nav
-                                            ? this.nav.setActiveMenuItem(name)
-                                            : null
-                                    }
-                                />
-                            )}
+                            render={props => <Contact {...props} />}
                         />
                         <Route
                             exact
                             path="/legacy/projects/sliding-puzzle"
-                            render={props => (
-                                <SlidingPuzzle
-                                    {...props}
-                                    updateMenu={name =>
-                                        this.nav
-                                            ? this.nav.setActiveMenuItem(name)
-                                            : null
-                                    }
-                                />
-                            )}
+                            render={props => <SlidingPuzzle {...props} />}
                         />
                         <Route
                             exact
                             path="/legacy/projects/sliding-puzzle/hiscores"
                             render={props => (
-                                <SlidingPuzzleHiscores
-                                    {...props}
-                                    updateMenu={name =>
-                                        this.nav
-                                            ? this.nav.setActiveMenuItem(name)
-                                            : null
-                                    }
-                                />
+                                <SlidingPuzzleHiscores {...props} />
                             )}
                         />
                         <Route
                             exact
                             path="/legacy/projects/snake"
-                            render={props => (
-                                <Snake
-                                    {...props}
-                                    updateMenu={name =>
-                                        this.nav
-                                            ? this.nav.setActiveMenuItem(name)
-                                            : null
-                                    }
-                                />
-                            )}
+                            render={props => <Snake {...props} />}
                         />
-                        <Route
-                            render={props => (
-                                <PageNotFound
-                                    {...props}
-                                    updateMenu={name =>
-                                        this.nav
-                                            ? this.nav.setActiveMenuItem(name)
-                                            : null
-                                    }
-                                />
-                            )}
-                        />
+                        <Route render={props => <PageNotFound {...props} />} />
                     </Switch>
                 </div>
                 <Footer />
